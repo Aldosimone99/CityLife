@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Posts</h2>
+    <input type="text" placeholder="Search posts" [(ngModel)]="searchTerm" (input)="searchPosts()">
+    <button class="btn btn-primary" (click)="createPost()">Add Post</button>
+    <ul class="list-group">
+      <li *ngFor="let post of filteredPosts" class="list-group-item">
+        {{ post.title }}
+        <button class="btn btn-info btn-sm float-right" (click)="viewComments(post.id)">View Comments</button>
+      </li>
+    </ul>
+  </div>

@@ -1,0 +1,11 @@
+<div class="container" *ngIf="user">
+    <h2>{{ user.name }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <h3>Posts</h3>
+    <ul class="list-group">
+      <li *ngFor="let post of userPosts" class="list-group-item">
+        {{ post.title }}
+        <button class="btn btn-info btn-sm float-right" (click)="viewComments(post.id)">View Comments</button>
+      </li>
+    </ul>
+  </div>
