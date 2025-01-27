@@ -17,6 +17,8 @@ import { PostsComponent } from './posts/posts.component';
 import { CommentsComponent } from './comments/comments.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { environment } from '../enviroments/enviroments';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -29,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UsersComponent,
     UserDetailComponent,
     PostsComponent,
-    CommentsComponent
+    CommentsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
     
   ],
   providers: [

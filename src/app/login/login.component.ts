@@ -23,11 +23,8 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    if (this.token) {
-      // Simula un'azione di login (es. chiama il servizio per verificare il token)
-      console.log('Login con token:', this.token);
-    } else {
-      alert('Per favore, inserisci un token.');
-    }
+    // Simula un'azione di login con qualsiasi token
+    this.authService.login(this.token || 'fake-token');
+    this.router.navigate(['/dashboard']);
   }
 }

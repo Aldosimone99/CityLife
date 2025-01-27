@@ -1,3 +1,4 @@
+// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/app.component.scss
 html, body {
   margin: 0;
   padding: 0;
@@ -17,10 +18,31 @@ html, body {
   padding: 0.8rem 1rem; // Spaziatura personalizzata per la navbar
 }
 
+.navbar-nav.ml-auto {
+  margin-left: auto; // Spinge gli elementi della navbar tutto a destra
+}
+
 .login-page .content {
   margin-top: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header {
+  .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);
+    &:hover {
+      border-color: rgba(255, 255, 255, 1);
+      color: rgba(255, 255, 255, 1);
+    }
+  }
 }

@@ -1,15 +1,22 @@
+<!-- filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/app.component.html -->
 <div [ngClass]="{'login-page': router.url === '/login'}">
   <div class="navbar-wrapper" *ngIf="showNavbar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">CityLife</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-          </li>
-        </ul>
-        <button class="btn btn-outline-danger my-2 my-sm-0" (click)="logout()">Logout</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">CityLife</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/dashboard">Home</a>
+            </li>
+            <!-- Altri elementi della navbar -->
+          </ul>
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2" (click)="logout()">Logout</button>
+          </div>
+        </div>
       </div>
     </nav>
   </div>
-    <router-outlet></router-outlet>
-  </div>
+  <router-outlet></router-outlet>
+</div>

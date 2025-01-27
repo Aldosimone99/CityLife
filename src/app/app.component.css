@@ -17,10 +17,29 @@ html, body {
   padding: 0.8rem 1rem;
 }
 
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}
+
 .login-page .content {
   margin-top: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+header .nav-link:hover {
+  color: rgb(255, 255, 255);
+}
+header .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+}
+header .btn-outline-light:hover {
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }/*# sourceMappingURL=app.component.css.map */

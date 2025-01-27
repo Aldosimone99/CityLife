@@ -1,3 +1,4 @@
+// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/app.component.ts
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
@@ -43,7 +44,7 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.authService.removeToken();
+    this.authService.logout();
     this.router.navigate(['/login']);
   }
 }
