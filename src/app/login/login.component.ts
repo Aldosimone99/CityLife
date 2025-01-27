@@ -15,11 +15,10 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.token) {
-      this.authService.setToken(this.token);
+      // Simula un'azione di login (es. chiama il servizio per verificare il token)
+      console.log('Login con token:', this.token);
     } else {
-      // handle the case when token is undefined
-      console.error('Token is undefined');
+      alert('Per favore, inserisci un token.');
     }
-    this.router.navigate(['/users']);
   }
 }

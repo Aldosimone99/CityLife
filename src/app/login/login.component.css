@@ -1,0 +1,61 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background: rgba(42, 54, 60, 0.6666666667);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+.login-form h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #ffffff;
+}
+.login-form .form-group {
+  margin-bottom: 1rem;
+}
+.login-form .form-group label {
+  font-size: 1rem;
+  color: #ffffff;
+}
+.login-form .form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.login-form .form-group input:focus {
+  border-color: #007bff;
+}
+.login-form .btn-block {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+.login-form .btn-block:hover {
+  background-color: #0056b3;
+}/*# sourceMappingURL=login.component.css.map */

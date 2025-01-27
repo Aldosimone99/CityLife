@@ -1,0 +1,39 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8; // Sfondo generale della pagina
+}
+
+.navbar-wrapper {
+  width: 100%; // La navbar occupa l'intera larghezza
+  position: fixed; // La navbar rimane in cima mentre si scorre la pagina
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  padding: 0.8rem 1rem; // Spaziatura personalizzata per la navbar
+}
+
+.content {
+  margin-top: 56px; // Spazio per la navbar (altezza standard della navbar Bootstrap)
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 56px); // L'altezza del contenuto meno la navbar
+  background-image: url('../assets/imgs/loginwallpaper.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.login-page .content {
+  margin-top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
