@@ -92,15 +92,15 @@ form {
     }
 
     input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
     }
-  }
+}
 
-  .signin-btn {
+.signin-btn {
     background: $primary-color;
     color: $secondary-color;
     border: none;
@@ -112,14 +112,14 @@ form {
     display: block;
     width: 100%; /* Make the button full width */
     text-align: center;
-  }
+    }
 }
 
 footer {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 
-  a {
+a {
     color: $accent-color;
     text-decoration: none;
   }
@@ -150,12 +150,12 @@ footer {
 }
 
 .language-switcher {
-  margin-top: 30px; /* Add margin to separate from form box */
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  gap: 10px;
+margin-top: 30px; 
+display: flex;
+justify-content: center; 
+gap: 10px;
 
-  button {
+button {
     background: $primary-color;
     color: $secondary-color;
     border: none;
@@ -164,5 +164,5 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
-  }
+    }
 }

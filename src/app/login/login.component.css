@@ -134,9 +134,9 @@ footer a {
 }
 
 .language-switcher {
-  margin-top: 30px; /* Add margin to separate from form box */
+  margin-top: 30px;
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   gap: 10px;
 }
 .language-switcher button {
