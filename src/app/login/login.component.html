@@ -1,19 +1,32 @@
-<div class="login-wrapper">
+<div class="login-page">
+  <img src="../../assets/imgs/logo.png" alt="CityLife" class="logo" />
   <div class="login-container">
-    <form (ngSubmit)="onSubmit()" class="login-form">
-      <h1>Accedi a Citylife</h1>
-      <div class="form-group">
-        <input 
-          type="text" 
-          id="token" 
-          name="token" 
-          [(ngModel)]="token" 
-          required 
-          placeholder="Inserisci il Token" 
-          class="form-control"
-        />
+    <div class="form-section">
+      <div class="form-box">
+        <header>
+          <h1>{{ 'WELCOME' | translate }}</h1>
+          <p>{{ 'ENTER_TOKEN' | translate }}</p>
+        </header>
+        <form>
+          <div class="input-group">
+            <input type="text" id="token" placeholder="{{ 'ENTER_TOKEN' | translate }}" />
+          </div>
+          <button type="submit" class="signin-btn">{{ 'SIGN_UP' | translate }}</button>
+        </form>
+        <footer>
+          <p>{{ 'DONT_HAVE_ACCOUNT' | translate }} <a href="#">{{ 'SIGN_UP' | translate }}</a></p>
+        </footer>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Accedi</button>
-    </form>
+      <div class="language-switcher">
+        <button (click)="switchLanguage('en')">English</button>
+        <button (click)="switchLanguage('it')">Italiano</button>
+      </div>
+    </div>
+    <div class="image-section">
+      <img src="../../assets/imgs/loginwallpaper.gif" alt="Login Wallpaper" />
+      <div class="overlay-text">
+        <h2>{{ 'WELCOME_MESSAGE' | translate }}</h2>
+      </div>
+    </div>
   </div>
 </div>

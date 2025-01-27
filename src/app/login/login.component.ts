@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,15 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent {
   token: string | undefined;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private translate: TranslateService
+  ) {}
+
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+  }
 
   onSubmit() {
     if (this.token) {

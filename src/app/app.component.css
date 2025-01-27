@@ -17,18 +17,6 @@ html, body {
   padding: 0.8rem 1rem;
 }
 
-.content {
-  margin-top: 56px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 56px);
-  background-image: url("../assets/imgs/loginwallpaper.gif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .login-page .content {
   margin-top: 0;
   height: 100vh;

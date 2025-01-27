@@ -1,68 +1,168 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+// Variables
+$primary-color: #000;
+$secondary-color: #fff;
+$accent-color: #f44336;
+$font-family: 'Arial, sans-serif';
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.login-wrapper {
-    min-height: 100vh;
-    width: 100%;;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+body {
+  font-family: $font-family;
+  background-color: $secondary-color;
+  color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  position: relative; /* Add relative positioning */
+}
+
+.logo {
+  position: absolute;
+  top: 20px; /* Position the logo at the top */
+  left: 20px; /* Position the logo at the left */
+  width: 300px;
+}
+
+.login-page {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  max-width: 100%;
+  background: $secondary-color;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
 }
 
 .login-container {
-    background: #2a363caa;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 400px;
-
+  display: flex;
+  flex: 1;
 }
 
-.login-form {
-    display: flex;
-    flex-direction: column;
+.form-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center the form */
+  max-width: 600px; /* Add max-width to reduce the width */
+  background-color: #f1f0f0;
+}
 
-    h1 {
-        margin-bottom: 1.5rem;
-        font-size: 1.8rem;
-        text-align: center;
-        color: #ffffff;
-    }
+.form-box {
+  width: 100%;
+  padding: 20px;
+  background: $secondary-color; /* Add background color */
+  border-radius: 10px; /* Add border radius */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add more visible box shadow */
+}
 
-    .form-group {
-        margin-bottom: 1rem;
+header {
+  text-align: center;
+  margin-bottom: 20px;
 
-        label {
-        font-size: 1rem;
-        color: #ffffff;
+  h1, p {
+    text-align: center;
+  }
+}
+
+.divider {
+  text-align: center;
+  margin: 10px 0;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+form {
+  .input-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.9rem;
     }
 
     input {
-        width: 100%;
-        padding: 0.8rem;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        outline: none;
-        transition: border-color 0.3s;
-
-        &:focus {
-            border-color: #007bff;
-        }
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
     }
+  }
+
+  .signin-btn {
+    background: $primary-color;
+    color: $secondary-color;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: 100%; /* Make the button full width */
+    text-align: center;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+
+  a {
+    color: $accent-color;
+    text-decoration: none;
+  }
+}
+
+.image-section {
+  flex: 1;
+  position: relative;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    color: $secondary-color;
+
+    h2 {
+        font-size: 40px;
+        margin-bottom: 10px;
     }
-
-    .btn-block {
-        padding: 0.8rem;
-        font-size: 1rem;
-        border-radius: 8px;
-        transition: background-color 0.3s;
-
-    &:hover {
-        background-color: #0056b3;
 }
 }
+
+.language-switcher {
+  margin-top: 30px; /* Add margin to separate from form box */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  gap: 10px;
+
+  button {
+    background: $primary-color;
+    color: $secondary-color;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+  }
 }
