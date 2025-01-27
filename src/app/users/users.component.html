@@ -1,12 +1,14 @@
 <div class="container">
-    <h2>Users</h2>
+  <h2>Users</h2>
+  <div class="search-bar">
     <input type="text" placeholder="Search by name or email" [(ngModel)]="searchTerm" (input)="searchUsers()">
     <button class="btn btn-primary" (click)="createUser()">Add User</button>
-    <ul class="list-group">
-      <li *ngFor="let user of filteredUsers" class="list-group-item">
-        {{ user.name }} - {{ user.email }}
-        <button class="btn btn-danger btn-sm float-right" (click)="deleteUser(user.id)">Delete</button>
-        <button class="btn btn-info btn-sm float-right mr-2" (click)="viewUser(user.id)">View</button>
-      </li>
-    </ul>
   </div>
+  <ul class="list-group">
+    <li *ngFor="let user of filteredUsers" class="list-group-item">
+      {{ user.name }} - {{ user.email }}
+      <button class="btn btn-info btn-sm float-right mr-2" (click)="viewUser(user.id)">View</button>
+      <button class="btn btn-danger btn-sm float-right mr-2" (click)="deleteUser(user.id)">Delete</button>
+    </li>
+  </ul>
+</div>

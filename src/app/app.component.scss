@@ -1,4 +1,3 @@
-// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/app.component.scss
 html, body {
   margin: 0;
   padding: 0;
@@ -16,6 +15,7 @@ html, body {
 
 .navbar {
   padding: 0.8rem 1rem; // Spaziatura personalizzata per la navbar
+  background-color: #343a40; // Colore di sfondo della navbar (bg-dark)
 }
 
 .navbar-nav.ml-auto {
@@ -44,5 +44,21 @@ header {
       border-color: rgba(255, 255, 255, 1);
       color: rgba(255, 255, 255, 1);
     }
+  }
+}
+
+.form-control {
+  border-radius: 20px; // Bordi rotondi
+  background-color: #343a40; // Colore di sfondo uguale a quello della navbar
+  color: white; // Colore del testo per contrastare lo sfondo scuro
+  border: 1px solid rgba(255, 255, 255, 0.75); // Bordo bianco semi-trasparente
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.75); // Colore del placeholder bianco semi-trasparente
+  }
+  &:focus {
+    background-color: #343a40; // Mantieni lo sfondo scuro quando è in focus
+    color: white; // Mantieni il colore del testo bianco
+    border-color: rgba(255, 255, 255, 1); // Bordo bianco pieno quando è in focus
+    box-shadow: none; // Rimuovi l'ombra del box
   }
 }

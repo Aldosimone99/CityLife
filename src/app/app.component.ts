@@ -13,6 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit {
   showNavbar: boolean = true;
   currentLang: string = 'en'; // Lingua corrente (default)
+  searchQuery: string = ''; // Query di ricerca
 
   constructor(
     private authService: AuthService,
@@ -46,5 +47,11 @@ export class AppComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  searchUser() {
+    if (this.searchQuery) {
+      this.router.navigate(['/users'], { queryParams: { query: this.searchQuery } });
+    }
   }
 }

@@ -1,0 +1,28 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  
+    input {
+      flex: 1;
+      margin-right: 10px;
+    }
+  
+    button {
+      flex-shrink: 0;
+    }
+  }
+  
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .btn {
+      margin-left: 10px;
+    }
+  }

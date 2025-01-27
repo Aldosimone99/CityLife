@@ -1,4 +1,3 @@
-<!-- filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/app.component.html -->
 <div [ngClass]="{'login-page': router.url === '/login'}">
   <div class="navbar-wrapper" *ngIf="showNavbar">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -11,6 +10,10 @@
             </li>
             <!-- Altri elementi della navbar -->
           </ul>
+          <form class="d-flex" (ngSubmit)="searchUser()">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchQuery" name="searchQuery">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
           <div class="text-end">
             <button type="button" class="btn btn-outline-light me-2" (click)="logout()">Logout</button>
           </div>
