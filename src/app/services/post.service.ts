@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostService {
-  private apiUrl = 'https://gorest.co.in/public/v1';
+  private apiUrl = 'https://gorest.co.in/public/v2';
   private token = localStorage.getItem('authToken');
 
   constructor(private http: HttpClient) {}

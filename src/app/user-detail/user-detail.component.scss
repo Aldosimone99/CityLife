@@ -1,10 +1,12 @@
-body {
+:host {
+  display: block;
   font-family: Arial, sans-serif;
+  background-color: #343a40; // Colore di sfondo uguale a quello della navbar
+  color: white; // Colore del testo per contrastare lo sfondo scuro
+  height: 100vh; // Assicura che l'elemento occupi l'intera altezza della finestra
+  width: 100vw; // Assicura che l'elemento occupi l'intera larghezza della finestra
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .container {
@@ -13,15 +15,9 @@ body {
   margin-top: 20px;
 }
 
-.sidebar, .sidebar-right {
-  width: 20%;
+.sidebar{
+  width: 30%;
   padding: 10px;
-}
-
-.sidebar-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 main {

@@ -21,6 +21,11 @@ export class UserService {
     return this.http.get<any[]>(`${this.apiUrl}/users`, { headers });
   }
 
+  getUser(userId: number): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get<any>(`${this.apiUrl}/users/${userId}`, { headers });
+  }
+
   getUserPosts(userId: number): Observable<any[]> {
     const headers = this.getHeaders();
     return this.http.get<any[]>(`${this.apiUrl}/posts?user_id=${userId}`, { headers });

@@ -1,4 +1,3 @@
-// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/user-detail/user-detail.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../services/user.service';
@@ -10,22 +9,17 @@ import { UserService } from '../services/user.service';
   standalone: false,
 })
 export class UserDetailComponent implements OnInit {
-logout() {
-throw new Error('Method not implemented.');
-}
-searchUser() {
-throw new Error('Method not implemented.');
-}
   userId!: number;
   user: any;
   posts: any[] = [];
   comments: { [key: number]: any[] } = {};
+  showComments: { [key: number]: boolean } = {}; // Stato di visualizzazione dei commenti
 
   constructor(private route: ActivatedRoute, private userService: UserService) {}
 
   ngOnInit(): void {
     this.userId = +this.route.snapshot.paramMap.get('id')!;
-    this.userService.getUsers(this.userId).subscribe(user => {
+    this.userService.getUser(this.userId).subscribe(user => {
       this.user = user;
     });
     this.userService.getUserPosts(this.userId).subscribe(posts => {
@@ -33,8 +27,13 @@ throw new Error('Method not implemented.');
       this.posts.forEach(post => {
         this.userService.getPostComments(post.id).subscribe(comments => {
           this.comments[post.id] = comments;
+          this.showComments[post.id] = false; // Inizializza lo stato di visualizzazione dei commenti a false
         });
       });
     });
+  }
+
+  toggleComments(postId: number): void {
+    this.showComments[postId] = !this.showComments[postId]; // Mostra/nascondi i commenti
   }
 }

@@ -1,22 +1,23 @@
 <app-navbar></app-navbar>
-<div class="container">
+<div class="container" *ngIf="user">
   <aside class="sidebar">
     <div class="profile">
-      <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-image">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Profile Picture" class="profile-image">
       <h2>{{ user.name }}</h2>
-      <p>{{ user.email }}</p>
-      <p>{{ user.gender }}</p>
-      <p>{{ user.status }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Gender: {{ user.gender }}</p>
+      <p>Status: {{ user.status }}</p>
     </div>
   </aside>
   
   <main>
     <section class="user-posts">
-      <h2>User Posts</h2>
+      <h2>Posts</h2>
       <div *ngFor="let post of posts" class="post-box">
         <h3>{{ post.title }}</h3>
         <p>{{ post.body }}</p>
-        <div class="comments">
+        <button (click)="toggleComments(post.id)">Comments</button>
+        <div class="comments" *ngIf="showComments[post.id]">
           <h4>Comments</h4>
           <div *ngFor="let comment of comments[post.id]" class="comment-box">
             <p><strong>{{ comment.name }}</strong>: {{ comment.body }}</p>
@@ -25,3 +26,4 @@
       </div>
     </section>
   </main>
+</div>
