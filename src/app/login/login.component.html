@@ -1,4 +1,3 @@
-<!-- filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/login/login.component.html -->
 <div class="login-page">
   <img src="../../assets/imgs/logo.png" alt="CityLife" class="logo" />
   <div class="login-container">
@@ -10,12 +9,13 @@
         </header>
         <form (ngSubmit)="onSubmit()">
           <div class="input-group">
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
             <input type="text" id="token" [(ngModel)]="token" name="token" placeholder="{{ 'ENTER_TOKEN' | translate }}" />
           </div>
           <button type="submit" class="signin-btn">{{ 'SIGN_IN' | translate }}</button>
         </form>
         <footer>
-          <p>{{ 'DONT_HAVE_ACCOUNT' | translate }} <a href="#">{{ 'SIGN_UP' | translate }}</a></p>
+          <p>{{ 'DONT_HAVE_A_TOKEN?' | translate }} <a href="https://gorest.co.in/consumer/login" target="_blank">{{ 'GET_HERE' | translate }}</a></p>
         </footer>
       </div>
       <div class="language-switcher">

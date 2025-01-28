@@ -1,4 +1,3 @@
-// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/login/login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -12,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LoginComponent {
   token: string | undefined;
+  errorMessage: string | null = null;
 
   constructor(
     private authService: AuthService,
@@ -24,8 +24,24 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    // Simula un'azione di login con qualsiasi token
-    this.authService.login(this.token || 'fake-token');
-    this.router.navigate(['/users']);
+    if (!this.token) {
+      this.translate.get('PLEASE_INSERT_TOKEN').subscribe((res: string) => {
+        this.errorMessage = res;
+      });
+      return;
+    }
+
+    this.authService.login(this.token).subscribe(
+      () => {
+        this.authService.setToken(this.token!);
+        this.router.navigate(['/users']);
+      },
+      (error) => {
+        console.error('Invalid token', error);
+        this.translate.get('INVALID_TOKEN').subscribe((res: string) => {
+          this.errorMessage = res;
+        });
+      }
+    );
   }
 }
