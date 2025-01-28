@@ -17,8 +17,8 @@ import { PostsComponent } from './posts/posts.component';
 import { CommentsComponent } from './comments/comments.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { environment } from '../enviroments/enviroments';
+import { NavbarComponent } from './navbar.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -32,7 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserDetailComponent,
     PostsComponent,
     CommentsComponent,
-    DashboardComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

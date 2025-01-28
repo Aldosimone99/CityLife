@@ -1,3 +1,4 @@
+// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/users/users.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
@@ -10,6 +11,9 @@ import { Inject } from '@angular/core';
   standalone: false,
 })
 export class UsersComponent implements OnInit {
+logout() {
+throw new Error('Method not implemented.');
+}
   users: any[] = [];
   filteredUsers: any[] = [];
   searchTerm: string = '';
@@ -17,7 +21,8 @@ export class UsersComponent implements OnInit {
   constructor(@Inject(UserService) private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(data => {
+    const userId = 1; // Replace with the appropriate userId
+    this.userService.getUsers(userId).subscribe(data => {
       this.users = data;
       this.filteredUsers = data;
     });
@@ -31,7 +36,16 @@ export class UsersComponent implements OnInit {
   }
 
   createUser() {
-    // Implement create user logic
+    const newUser = {
+      name: 'New User',
+      email: 'newuser@example.com',
+      gender: 'male',
+      status: 'active'
+    };
+    this.userService.createUser(newUser).subscribe(user => {
+      this.users.push(user);
+      this.filteredUsers.push(user);
+    });
   }
 
   deleteUser(id: number) {

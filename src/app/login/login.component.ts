@@ -1,3 +1,4 @@
+// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/login/login.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -25,6 +26,6 @@ export class LoginComponent {
   onSubmit() {
     // Simula un'azione di login con qualsiasi token
     this.authService.login(this.token || 'fake-token');
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/users']);
   }
 }

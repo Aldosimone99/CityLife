@@ -1,25 +1,86 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .search-bar {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  width: 100%;
 }
 .search-bar input {
   flex: 1;
   margin-right: 10px;
+  border-radius: 20px;
+  background-color: #343a40;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+.search-bar input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+.search-bar input:focus {
+  background-color: #343a40;
+  color: white;
+  border-color: rgb(255, 255, 255);
+  box-shadow: none;
 }
 .search-bar button {
   flex-shrink: 0;
+  border-radius: 20px;
 }
 
-.list-group-item {
+.user-list {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
 }
-.list-group-item .btn {
-  margin-left: 10px;
+
+.user-box {
+  background-color: #444;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.user-box:hover {
+  background-color: #555;
+}
+.user-box:active {
+  background-color: #666;
+}
+.user-box img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=users.component.css.map */

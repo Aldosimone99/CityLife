@@ -1,28 +1,88 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-    margin-top: 20px;
-  }
-  
-  .search-bar {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  
-    input {
-      flex: 1;
-      margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Assicura che il contenitore occupi almeno l'altezza della finestra
+  width: 100vw; // Assicura che il contenitore occupi tutta la larghezza dello schermo
+  background-color: #343a40; // Colore di sfondo
+  color: white; // Colore del testo per contrastare lo sfondo scuro
+  padding: 20px; // Spaziatura interna
+  box-sizing: border-box; // Include il padding nella larghezza totale
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%; // Assicura che la barra di ricerca occupi tutta la larghezza del contenitore
+
+  input {
+    flex: 1;
+    margin-right: 10px;
+    border-radius: 20px; // Bordi rotondi
+    background-color: #343a40; // Colore di sfondo
+    color: white; // Colore del testo per contrastare lo sfondo scuro
+    border: 1px solid rgba(255, 255, 255, 0.75); // Bordo bianco semi-trasparente
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.75); // Colore del placeholder bianco semi-trasparente
     }
-  
-    button {
-      flex-shrink: 0;
+    &:focus {
+      background-color: #343a40; // Mantieni lo sfondo scuro quando è in focus
+      color: white; // Mantieni il colore del testo bianco
+      border-color: rgba(255, 255, 255, 1); // Bordo bianco pieno quando è in focus
+      box-shadow: none; // Rimuovi l'ombra del box
     }
   }
-  
-  .list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    .btn {
-      margin-left: 10px;
-    }
+
+  button {
+    flex-shrink: 0;
+    border-radius: 20px; // Bordi rotondi
   }
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; // Spaziatura tra i box degli utenti
+  width: 100%; // Assicura che la lista occupi tutta la larghezza del contenitore
+}
+
+.user-box {
+  background-color: #444; // Colore di sfondo del box utente
+  color: white; // Colore del testo per contrastare lo sfondo scuro
+  border: 1px solid rgba(255, 255, 255, 0.75); // Bordo bianco semi-trasparente
+  padding: 10px; // Spaziatura interna del box
+  border-radius: 10px; // Bordi arrotondati per un aspetto più gradevole
+  flex: 1 1 calc(33.333% - 20px); // Ogni box occupa un terzo della larghezza del contenitore, meno lo spazio tra i box
+  box-sizing: border-box; // Include il padding nella larghezza totale
+  text-align: center; // Centra il testo all'interno del box
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; // Altezza fissa per i box
+  cursor: pointer; // Cambia il cursore quando si passa sopra i box
+  transition: background-color 0.3s; // Aggiungi una transizione per il cambio di colore
+
+  &:hover {
+    background-color: #555; // Cambia il colore di sfondo quando si passa sopra il box
+  }
+
+  &:active {
+    background-color: #666; // Cambia il colore di sfondo quando il box viene cliccato
+  }
+
+  img {
+    width: 80px; // Larghezza dell'immagine
+    height: 80px; // Altezza dell'immagine
+    border-radius: 50%; // Rende l'immagine rotonda
+    margin-bottom: 10px; // Spaziatura sotto l'immagine
+  }
+}

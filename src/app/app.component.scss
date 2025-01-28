@@ -6,22 +6,6 @@ html, body {
   background-color: #f0f4f8; // Sfondo generale della pagina
 }
 
-.navbar-wrapper {
-  width: 100%; // La navbar occupa l'intera larghezza
-  position: fixed; // La navbar rimane in cima mentre si scorre la pagina
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar {
-  padding: 0.8rem 1rem; // Spaziatura personalizzata per la navbar
-  background-color: #343a40; // Colore di sfondo della navbar (bg-dark)
-}
-
-.navbar-nav.ml-auto {
-  margin-left: auto; // Spinge gli elementi della navbar tutto a destra
-}
-
 .login-page .content {
   margin-top: 0;
   height: 100vh;

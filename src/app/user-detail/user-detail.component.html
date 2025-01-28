@@ -1,11 +1,27 @@
-<div class="container" *ngIf="user">
-    <h2>{{ user.name }}</h2>
-    <p>Email: {{ user.email }}</p>
-    <h3>Posts</h3>
-    <ul class="list-group">
-      <li *ngFor="let post of userPosts" class="list-group-item">
-        {{ post.title }}
-        <button class="btn btn-info btn-sm float-right" (click)="viewComments(post.id)">View Comments</button>
-      </li>
-    </ul>
-  </div>
+<app-navbar></app-navbar>
+<div class="container">
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-image">
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.email }}</p>
+      <p>{{ user.gender }}</p>
+      <p>{{ user.status }}</p>
+    </div>
+  </aside>
+  
+  <main>
+    <section class="user-posts">
+      <h2>User Posts</h2>
+      <div *ngFor="let post of posts" class="post-box">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
+        <div class="comments">
+          <h4>Comments</h4>
+          <div *ngFor="let comment of comments[post.id]" class="comment-box">
+            <p><strong>{{ comment.name }}</strong>: {{ comment.body }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
