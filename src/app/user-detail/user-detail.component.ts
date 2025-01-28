@@ -18,21 +18,26 @@ export class UserDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userId = +this.route.snapshot.paramMap.get('id')!;
-    this.userService.getUser(this.userId).subscribe(user => {
-      this.user = user;
-    });
-    this.userService.getUserPosts(this.userId).subscribe(posts => {
-      this.posts = posts;
-      this.posts.forEach(post => {
-        this.userService.getPostComments(post.id).subscribe(comments => {
-          this.comments[post.id] = comments;
-          this.showComments[post.id] = false; // Inizializza lo stato di visualizzazione dei commenti a false
+    this.route.paramMap.subscribe(params => {
+      this.userId = +params.get('id')!;
+      if (!isNaN(this.userId)) {
+        this.userService.getUser(this.userId).subscribe(user => {
+          this.user = user;
         });
-      });
+        this.userService.getUserPosts(this.userId).subscribe(posts => {
+          this.posts = posts;
+          this.posts.forEach(post => {
+            this.userService.getPostComments(post.id).subscribe(comments => {
+              this.comments[post.id] = comments;
+              this.showComments[post.id] = false; // Inizializza lo stato di visualizzazione dei commenti a false
+            });
+          });
+        });
+      } else {
+        console.error('Invalid userId:', this.userId);
+      }
     });
   }
-
   toggleComments(postId: number): void {
     this.showComments[postId] = !this.showComments[postId]; // Mostra/nascondi i commenti
   }
