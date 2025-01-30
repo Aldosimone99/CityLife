@@ -21,8 +21,7 @@ throw new Error('Method not implemented.');
   constructor(@Inject(UserService) private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    const userId = 1; // Replace with the appropriate userId
-    this.userService.getUsers(userId).subscribe(data => {
+    this.userService.getUsers().subscribe(data => {
       this.users = data;
       this.filteredUsers = data;
     });

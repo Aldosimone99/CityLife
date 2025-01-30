@@ -58,6 +58,12 @@
   width: 100%;
   justify-content: center;
 }
+.user-list img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
 
 .user-box {
   background-color: #444;

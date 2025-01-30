@@ -56,6 +56,13 @@
   gap: 20px; // Spaziatura tra i box degli utenti
   width: 100%; // Assicura che la lista occupi tutta la larghezza del contenitore
   justify-content: center; // Centra i box orizzontalmente
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
 }
 
 .user-box {

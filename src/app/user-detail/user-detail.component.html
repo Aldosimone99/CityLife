@@ -13,14 +13,20 @@
   <main>
     <section class="user-posts">
       <h2>Posts</h2>
-      <div *ngFor="let post of posts" class="post-box">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.body }}</p>
-        <button class="btn btn-secondary" (click)="toggleComments(post.id)">
-          <i class="bi bi-chat-square-text-fill"></i> Comments
-        </button>
+      <div class="post-container" *ngFor="let post of posts">
+        <div class="post-header">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Profile">
+          <div>
+            <strong>{{ user.name }}</strong>
+          </div>
+        </div>
+        <div class="post-content">
+          {{ post.body }}
+        </div>
+        <div class="post-actions">
+          <button (click)="toggleComments(post.id)">💬 Commenti</button>
+        </div>
         <div class="comments" *ngIf="showComments[post.id]">
-          <h4>Comments</h4>
           <div *ngFor="let comment of comments[post.id]" class="comment-box">
             <p><strong>{{ comment.name }}</strong>: {{ comment.body }}</p>
           </div>

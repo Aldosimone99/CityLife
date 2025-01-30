@@ -1,8 +1,8 @@
 :host {
   display: block;
   font-family: Arial, sans-serif;
-  background-color: #343a40; // Colore di sfondo uguale a quello della navbar
-  color: white; // Colore del testo per contrastare lo sfondo scuro
+  background-color: #18191a; // Colore di sfondo scuro
+  color: #e4e6eb; // Colore del testo chiaro
   height: 100vh; // Assicura che l'elemento occupi l'intera altezza della finestra
   width: 100vw; // Assicura che l'elemento occupi l'intera larghezza della finestra
   margin: 0;
@@ -12,10 +12,10 @@
 .container {
   display: flex;
   width: 80%;
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
-.sidebar{
+.sidebar {
   width: 30%;
   padding: 10px;
 }
@@ -39,20 +39,93 @@ main {
   margin-bottom: 10px;
 }
 
-.post-box {
-  background-color: #444;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
+.user-posts {
+  .post-container {
+    width: 500px;
+    background-color: #242526;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
 
-.comments {
-  margin-top: 10px;
-}
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 
-.comment-box {
-  background-color: #555;
-  padding: 5px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    div {
+      strong {
+        display: block;
+      }
+
+      p {
+        color: gray;
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+  }
+
+  .post-content {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-top: 1px solid #3A3B3C;
+
+    button {
+      background: none;
+      border: none;
+      color: #B0B3B8;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #3A3B3C;
+      }
+    }
+  }
+
+  .comments {
+    margin-top: 10px;
+
+    .comment-box {
+      background-color: #3a3b3c; // Colore di sfondo del commento
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Ombra leggera
+
+      p {
+        margin: 0;
+        font-size: 0.9em;
+        color: #e4e6eb; // Colore del testo del commento
+      }
+
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
 }
