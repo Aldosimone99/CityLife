@@ -1,5 +1,10 @@
-html, body {
-  height: 100%;
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+  background-color: #343a40;
+  color: white;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
 }
@@ -9,19 +14,17 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  width: 100vw;
   background-color: #343a40;
   color: white;
-  padding: 20px;
-  box-sizing: border-box;
+  height: 80%;
+  width: 80%;
 }
 
 .search-bar {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  width: 100%;
+  width: 30%;
 }
 .search-bar input {
   flex: 1;
@@ -53,6 +56,7 @@ html, body {
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+  justify-content: center;
 }
 
 .user-box {
@@ -61,26 +65,17 @@ html, body {
   border: 1px solid rgba(255, 255, 255, 0.75);
   padding: 10px;
   border-radius: 10px;
-  flex: 1 1 calc(33.333% - 20px);
+  width: 200px;
+  height: 200px;
   box-sizing: border-box;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 200px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 .user-box:hover {
   background-color: #555;
-}
-.user-box:active {
-  background-color: #666;
-}
-.user-box img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 10px;
 }/*# sourceMappingURL=users.component.css.map */
