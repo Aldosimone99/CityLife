@@ -1,10 +1,10 @@
 :host {
   display: block;
   font-family: Arial, sans-serif;
-  background-color: #18191a; // Colore di sfondo scuro
-  color: #e4e6eb; // Colore del testo chiaro
-  height: 100vh; // Assicura che l'elemento occupi l'intera altezza della finestra
-  width: 100vw; // Assicura che l'elemento occupi l'intera larghezza della finestra
+  background-color: #18191a;
+  color: #e4e6eb;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
 }
@@ -40,9 +40,9 @@ main {
 }
 
 .user-posts {
-text-align: center;
-font-size: 25px;
-margin-top: 50px;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 50px;
 
   .post-container {
     width: 500px;
@@ -117,16 +117,16 @@ margin-top: 50px;
     margin-top: 10px;
 
     .comment-box {
-      background-color: #3a3b3c; // Colore di sfondo del commento
+      background-color: #3a3b3c;
       padding: 10px;
       border-radius: 8px;
       margin-bottom: 10px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); // Ombra leggera
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
       p {
         margin: 0;
         font-size: 15px;
-        color: #e4e6eb; // Colore del testo del commento
+        color: #e4e6eb;
       }
 
       strong {

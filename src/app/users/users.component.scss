@@ -1,10 +1,10 @@
 :host {
   display: block;
   font-family: Arial, sans-serif;
-  background-color: #343a40; // Colore di sfondo uguale a quello della navbar
-  color: white; // Colore del testo per contrastare lo sfondo scuro
-  height: 100vh; // Assicura che l'elemento occupi l'intera altezza della finestra
-  width: 100vw; // Assicura che l'elemento occupi l'intera larghezza della finestra
+  background-color: #343a40;
+  color: white;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
 }
@@ -12,50 +12,57 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; // Allinea gli elementi all'inizio
   align-items: center;
-  background-color: #343a40; // Colore di sfondo
-  color: white; // Colore del testo per contrastare lo sfondo scuro
-  height: 80%; // Assicura che il contenitore occupi l'intera altezza della finestra
-  width: 80%; // Assicura che il contenitore occupi l'intera larghezza della finestra
+  background-color: #343a40;
+  color: white;
+  padding-top: 50px; // Aggiungi padding superiore per spostare tutto il contenitore più in basso
+}
+
+h1 {
+  margin-bottom: 10px; // Aggiungi margine inferiore per separare la scritta "Users" dalla barra di ricerca
 }
 
 .search-bar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  width: 30%; // Assicura che la barra di ricerca occupi tutta la larghezza del contenitore
+  margin-top: 20px;
+  margin-bottom: 150px;
+  width: 30%;
 
   input {
     flex: 1;
     margin-right: 10px;
-    border-radius: 20px; // Bordi rotondi
-    background-color: #343a40; // Colore di sfondo
-    color: white; // Colore del testo per contrastare lo sfondo scuro
-    border: 1px solid rgba(255, 255, 255, 0.75); // Bordo bianco semi-trasparente
+    border-radius: 20px;
+    background-color: #343a40;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.75);
     &::placeholder {
-      color: rgba(255, 255, 255, 0.75); // Colore del placeholder bianco semi-trasparente
+      color: rgba(255, 255, 255, 0.75);
     }
     &:focus {
-      background-color: #343a40; // Mantieni lo sfondo scuro quando è in focus
-      color: white; // Mantieni il colore del testo bianco
-      border-color: rgba(255, 255, 255, 1); // Bordo bianco pieno quando è in focus
-      box-shadow: none; // Rimuovi l'ombra del box
+      background-color: #343a40;
+      color: white;
+      border-color: rgba(255, 255, 255, 1);
+      box-shadow: none;
     }
   }
 
   button {
     flex-shrink: 0;
-    border-radius: 20px; // Bordi rotondi
+    border-radius: 20px;
   }
 }
+
 
 .user-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; // Spaziatura tra i box degli utenti
-  width: 100%; // Assicura che la lista occupi tutta la larghezza del contenitore
-  justify-content: center; // Centra i box orizzontalmente
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px; // Aggiungi margine superiore per spostare gli utenti più in basso
+
 
   img {
     width: 80px;
@@ -66,23 +73,23 @@
 }
 
 .user-box {
-  background-color: #444; // Colore di sfondo del box utente
-  color: white; // Colore del testo per contrastare lo sfondo scuro
-  border: 1px solid rgba(255, 255, 255, 0.75); // Bordo bianco semi-trasparente
-  padding: 10px; // Spaziatura interna del box
-  border-radius: 10px; // Bordi arrotondati per un aspetto più gradevole
-  width: 200px; // Larghezza minima
-  height: 200px; // Altezza minima uguale alla larghezza minima
-  box-sizing: border-box; // Include il padding nella larghezza totale
-  text-align: center; // Centra il testo all'interno del box
+  background-color: #444;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: pointer; // Cambia il cursore quando si passa sopra i box
-  transition: background-color 0.3s; // Aggiungi una transizione per il cambio di colore
+  cursor: pointer;
+  transition: background-color 0.3s;
 
   &:hover {
-    background-color: #555; // Cambia il colore di sfondo quando si passa sopra il box
+    background-color: #555;
   }
 }

@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'https://gorest.co.in/public/v2/'; // URL delle API di GoRest
+  private apiUrl = 'https://gorest.co.in/public/v2/';
 
   constructor(private http: HttpClient) {}
 
