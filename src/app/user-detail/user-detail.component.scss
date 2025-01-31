@@ -40,14 +40,19 @@ main {
 }
 
 .user-posts {
+text-align: center;
+font-size: 25px;
+margin-top: 50px;
+
   .post-container {
     width: 500px;
     background-color: #242526;
     border-radius: 10px;
     padding: 15px;
-    margin: 20px auto;
+    margin: 40px auto;
     color: white;
     font-family: Arial, sans-serif;
+    text-align: left;
   }
 
   .post-header {
@@ -65,6 +70,7 @@ main {
     div {
       strong {
         display: block;
+        font-size: 18px;
       }
 
       p {
@@ -76,7 +82,7 @@ main {
   }
 
   .post-content {
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
 
@@ -119,7 +125,7 @@ main {
 
       p {
         margin: 0;
-        font-size: 0.9em;
+        font-size: 15px;
         color: #e4e6eb; // Colore del testo del commento
       }
 

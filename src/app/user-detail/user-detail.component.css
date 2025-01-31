@@ -39,14 +39,20 @@ main {
   margin-bottom: 10px;
 }
 
+.user-posts {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 50px;
+}
 .user-posts .post-container {
   width: 500px;
   background-color: #242526;
   border-radius: 10px;
   padding: 15px;
-  margin: 20px auto;
+  margin: 40px auto;
   color: white;
   font-family: Arial, sans-serif;
+  text-align: left;
 }
 .user-posts .post-header {
   display: flex;
@@ -61,6 +67,7 @@ main {
 }
 .user-posts .post-header div strong {
   display: block;
+  font-size: 18px;
 }
 .user-posts .post-header div p {
   color: gray;
@@ -68,7 +75,7 @@ main {
   margin: 0;
 }
 .user-posts .post-content {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 .user-posts .post-image {
@@ -106,7 +113,7 @@ main {
 }
 .user-posts .comments .comment-box p {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 15px;
   color: #e4e6eb;
 }
 .user-posts .comments .comment-box strong {
