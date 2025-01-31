@@ -36,25 +36,19 @@ export class UserService {
   }
 
   getPostComments(postId: number): Observable<any[]> {
-    if (isNaN(postId) || postId <= 0) {
-      return throwError('Invalid post ID');
-    }
     return this.http.get<any[]>(`${this.apiUrl}/posts/${postId}/comments`).pipe(
-      catchError(this.handleError)
-    );
-  }
-
-  deleteUser(id: number): Observable<void> {
-    if (isNaN(id) || id <= 0) {
-      return throwError('Invalid user ID');
-    }
-    return this.http.delete<void>(`${this.apiUrl}/users/${id}`).pipe(
       catchError(this.handleError)
     );
   }
 
   createUser(newUser: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/users`, newUser).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  deleteUser(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/users/${id}`).pipe(
       catchError(this.handleError)
     );
   }

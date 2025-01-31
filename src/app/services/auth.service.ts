@@ -1,31 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private token: string | null = null;
+  private apiUrl = 'https://gorest.co.in/public/v2/';
+  private tokenKey = 'authToken';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {}
 
-  login(token: string): Observable<any> {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get('https://gorest.co.in/public/v2/users', { headers });
+  login(credentials: { token: string }): Observable<any> {
+    // Simulate a successful login by returning an observable with the token
+    this.setToken(credentials.token);
+    return of({ success: true });
   }
 
-  logout() {
-    this.token = null;
-    localStorage.removeItem('token');
+  logout(): void {
+    this.localStorageService.removeItem(this.tokenKey);
   }
 
   isAuthenticated(): boolean {
-    return this.token !== null || localStorage.getItem('token') !== null;
+    return this.getToken() !== null;
   }
 
-  setToken(token: string) {
-    this.token = token;
-    localStorage.setItem('token', token);
+  setToken(token: string): void {
+    this.localStorageService.setItem(this.tokenKey, token);
+  }
+
+  getToken(): string | null {
+    return this.localStorageService.getItem(this.tokenKey);
   }
 }

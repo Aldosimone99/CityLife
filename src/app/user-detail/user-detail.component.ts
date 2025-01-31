@@ -14,7 +14,10 @@ export class UserDetailComponent implements OnInit {
   comments: { [key: number]: any[] } = {};
   showComments: { [key: number]: boolean } = {};
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     const userId = this.route.snapshot.paramMap.get('id');
@@ -37,7 +40,7 @@ export class UserDetailComponent implements OnInit {
 
   toggleComments(postId: number): void {
     if (!this.comments[postId]) {
-      this.userService.getPostComments(postId).subscribe(comments => {
+      this.userService.getPostComments(postId).subscribe((comments: any[]) => {
         this.comments[postId] = comments;
         this.showComments[postId] = true;
       });

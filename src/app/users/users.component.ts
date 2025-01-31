@@ -1,4 +1,3 @@
-// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/users/users.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
@@ -11,9 +10,6 @@ import { Inject } from '@angular/core';
   standalone: false,
 })
 export class UsersComponent implements OnInit {
-logout() {
-throw new Error('Method not implemented.');
-}
   users: any[] = [];
   filteredUsers: any[] = [];
   searchTerm: string = '';
