@@ -13,6 +13,13 @@ export class UsersComponent implements OnInit {
   users: any[] = [];
   filteredUsers: any[] = [];
   searchTerm: string = '';
+  newUser: any = {
+    name: '',
+    email: '',
+    gender: 'male',
+    status: 'active'
+  };
+  isAddUserFormVisible: boolean = false;
 
   constructor(@Inject(UserService) private userService: UserService, private router: Router) {}
 
@@ -31,15 +38,14 @@ export class UsersComponent implements OnInit {
   }
 
   createUser() {
-    const newUser = {
-      name: 'New User',
-      email: 'newuser@example.com',
-      gender: 'male',
-      status: 'active'
-    };
-    this.userService.createUser(newUser).subscribe(user => {
+    console.log('Creating user:', this.newUser); // Log per debug
+    this.userService.createUser(this.newUser).subscribe(user => {
       this.users.push(user);
       this.filteredUsers.push(user);
+      this.resetForm();
+      this.hideAddUserForm();
+    }, error => {
+      console.error('Error creating user:', error); // Log per debug
     });
   }
 
@@ -52,5 +58,26 @@ export class UsersComponent implements OnInit {
 
   viewUser(id: number) {
     this.router.navigate(['/user', id]);
+  }
+
+  onSubmit() {
+    this.createUser();
+  }
+
+  resetForm() {
+    this.newUser = {
+      name: '',
+      email: '',
+      gender: 'male',
+      status: 'active'
+    };
+  }
+
+  showAddUserForm() {
+    this.isAddUserFormVisible = true;
+  }
+
+  hideAddUserForm() {
+    this.isAddUserFormVisible = false;
   }
 }

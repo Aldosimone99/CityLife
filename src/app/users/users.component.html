@@ -3,7 +3,7 @@
   <h2>Users</h2>
   <div class="search-bar">
     <input type="text" placeholder="  Search by name or email" [(ngModel)]="searchTerm" (input)="searchUsers()">
-    <button class="btn btn-primary" (click)="createUser()">Add User</button>
+    <button class="btn btn-primary" (click)="showAddUserForm()">Add User</button>
   </div>
   <div class="user-list">
     <div *ngFor="let user of filteredUsers" class="user-box">
@@ -11,6 +11,43 @@
       {{ user.name }}
       <button class="btn btn-secondary" (click)="viewUser(user.id)">View</button>
       <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+    </div>
+  </div>
+  <div class="modal" [ngClass]="{'show': isAddUserFormVisible}">
+    <div class="modal-content">
+      <span class="close" (click)="hideAddUserForm()">&times;</span>
+      <h3>Add New User</h3>
+      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" [(ngModel)]="newUser.name" name="name" required #name="ngModel">
+          <div *ngIf="name.invalid && name.touched" class="error-message">
+            Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" [(ngModel)]="newUser.email" name="email" required email #email="ngModel">
+          <div *ngIf="email.invalid && email.touched" class="error-message">
+            Enter a valid email.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" [(ngModel)]="newUser.gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select id="status" [(ngModel)]="newUser.status" name="status" required>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Add User</button>
+      </form>
     </div>
   </div>
 </div>

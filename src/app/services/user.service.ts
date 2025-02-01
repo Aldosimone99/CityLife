@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -42,7 +42,8 @@ export class UserService {
   }
 
   createUser(newUser: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/users`, newUser).pipe(
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post<any>(`${this.apiUrl}/users`, newUser, { headers }).pipe(
       catchError(this.handleError)
     );
   }
