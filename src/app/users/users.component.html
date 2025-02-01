@@ -6,11 +6,12 @@
     <button class="btn btn-primary" (click)="showAddUserForm()">Add User</button>
   </div>
   <div class="user-list">
-    <div *ngFor="let user of filteredUsers" class="user-box">
+    <div *ngFor="let user of filteredUsers" class="user-box" (click)="viewUser(user.id)">
       <img src="https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Profile Image">
       {{ user.name }}
-      <button class="btn btn-secondary" (click)="viewUser(user.id)">View</button>
-      <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+      <button class="delete-btn" (click)="deleteUser(user.id); $event.stopPropagation()">
+        <i class="bi bi-trash3"></i>
+      </button>
     </div>
   </div>
   <div class="modal" [ngClass]="{'show': isAddUserFormVisible}">
