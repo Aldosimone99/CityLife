@@ -10,35 +10,43 @@
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  backdrop-filter: blur(10px); /* Add blur effect */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
   padding-top: 60px;
 }
 
 .modal.show {
-  display: block; /* Show the modal */
+  display: block;
 }
 
 .modal-content {
-  background-color: #343a40; /* Match the background color of the page */
-  margin: 5% auto; /* 15% from the top and centered */
+  background-color: #343a40;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 30%; /* Adjust width to make it a vertical rectangle */
-  height: auto; /* Adjust height to fit content */
+  width: 30%;
+  height: auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 375px;
+  height: 650px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto;
 }
 
 .close {
@@ -58,20 +66,23 @@
 .error-message {
   color: red;
   font-size: 12px;
+  margin-top: 0; /* Rimuovi completamente lo spazio sopra il messaggio di errore */
+  margin-bottom: 0; /* Rimuovi completamente lo spazio sotto il messaggio di errore */
+  line-height: 1; /* Riduci l'altezza della linea */
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; // Allinea gli elementi all'inizio
+  justify-content: flex-start;
   align-items: center;
   background-color: #343a40;
   color: white;
-  padding-top: 50px; // Aggiungi padding superiore per spostare tutto il contenitore più in basso
+  padding-top: 50px;
 }
 
 h1 {
-  margin-bottom: 10px; // Aggiungi margine inferiore per separare la scritta "Users" dalla barra di ricerca
+  margin-bottom: 10px;
 }
 
 .search-bar {
@@ -105,15 +116,13 @@ h1 {
   }
 }
 
-
 .user-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
   justify-content: center;
-  margin-top: 40px; // Aggiungi margine superiore per spostare gli utenti più in basso
-
+  margin-top: 40px;
 
   img {
     width: 80px;
@@ -149,12 +158,97 @@ h1 {
     border: none;
     color: inherit;
     cursor: pointer;
-    font-size: 1.5rem; /* Adjust size as needed */
+    font-size: 1.5rem;
   }
 
   .delete-btn:hover {
-    color: red; /* Change color on hover */
+    color: red;
   }
+}
 
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.modal-form button {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-form button:hover {
+  background-color: #0056b3;
+}
+
+.modal-form .form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.modal-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.modal-form .form-group input,
+.modal-form .form-group select,
+.modal-form .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.modal-form .form-group input:focus,
+.modal-form .form-group select:focus,
+.modal-form .form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.modal-form .form-group .error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 0; /* Rimuovi completamente lo spazio sopra il messaggio di errore */
+  margin-bottom: 0; /* Rimuovi completamente lo spazio sotto il messaggio di errore */
+  line-height: 0.2; /* Riduci l'altezza della linea */
 }
 

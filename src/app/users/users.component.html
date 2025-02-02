@@ -18,7 +18,7 @@
     <div class="modal-content">
       <span class="close" (click)="hideAddUserForm()">&times;</span>
       <h3>Add New User</h3>
-      <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <form class="modal-form" (ngSubmit)="onSubmit()" #userForm="ngForm">
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" id="name" [(ngModel)]="newUser.name" name="name" required #name="ngModel">
