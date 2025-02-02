@@ -1,1 +1,9 @@
-@import 'bootstrap-icons/font/bootstrap-icons.css';/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+body, html {
+  font-family: "Inter", sans-serif !important; /* Cambia il font generale */
+}
+
+* {
+  font-family: "Inter", sans-serif !important; /* Forza l'applicazione del font */
+}/*# sourceMappingURL=styles.css.map */
