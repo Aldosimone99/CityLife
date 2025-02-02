@@ -18,6 +18,7 @@
 .sidebar {
   width: 30%;
   padding: 10px;
+  border-right: #383232 2px solid;
 }
 
 main {
@@ -43,7 +44,7 @@ main {
   text-align: center;
   font-size: 25px;
   margin-top: 50px;
-  border-left: #383232 2px solid;
+
 
   .post-container {
     width: 500px;

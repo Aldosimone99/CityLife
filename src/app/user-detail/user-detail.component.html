@@ -12,7 +12,8 @@
   
   <main>
     <section class="user-posts">
-      <h2>Posts</h2>
+      <h2 *ngIf="posts.length > 0">Posts</h2>
+      <h2 *ngIf="posts.length === 0">No posts available</h2>
       <div class="post-container" *ngFor="let post of posts">
         <div class="post-header">
           <img src="https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Profile">
