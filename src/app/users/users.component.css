@@ -20,6 +20,8 @@
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); /* Add blur effect */
   padding-top: 60px;
 }
 
@@ -28,11 +30,16 @@
 }
 
 .modal-content {
-  background-color: #343a40;
+  background-color: #343a40; /* Match the background color of the page */
   margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Adjust width to make it a vertical rectangle */
+  height: auto; /* Adjust height to fit content */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .close {
