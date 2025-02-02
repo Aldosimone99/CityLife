@@ -134,6 +134,7 @@ h1 {
 }
 
 .user-box {
+  position: relative; /* Aggiungi posizione relativa per posizionare il pallino */
   background-color: #444;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.75);
@@ -162,6 +163,20 @@ h1 {
 }
 .user-box .delete-btn:hover {
   color: red;
+}
+.user-box .status-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.user-box .status-indicator.active {
+  background-color: green;
+}
+.user-box .status-indicator.inactive {
+  background-color: red;
 }
 
 .modal-form {
