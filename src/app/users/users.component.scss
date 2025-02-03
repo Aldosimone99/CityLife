@@ -29,7 +29,7 @@
 }
 
 .modal-content {
-  background-color: #343a40;
+  background-color: #343a40a0;
   margin: 5% auto;
   padding: 20px;
   border: 1px solid #817b7b;
@@ -93,7 +93,6 @@ h1 {
   width: 30%;
 
   input {
-    flex: 1;
     margin-right: 10px;
     border-radius: 20px;
     background-color: #343a40;
@@ -190,21 +189,22 @@ h1 {
   padding: 20px;
   box-sizing: border-box;
   height: 100%;
+  width: 90%;
   overflow-y: auto;
 }
 
 .modal-form input,
 .modal-form select,
 .modal-form textarea {
-  width: calc(100% - 20px);
+  width: calc(100% - 10px); /* Increase the width */
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 10px;
   border: 1px solid #ccc;
   box-sizing: border-box;
   font-size: 16px;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: #444; /* Match the background color of the modal */
+  color: white;
 }
 
 .modal-form input:focus,
@@ -251,8 +251,8 @@ h1 {
   border: 1px solid #ccc;
   box-sizing: border-box;
   font-size: 16px;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: #444; /* Match the background color of the modal */
+  color: white;
 }
 
 .modal-form .form-group input:focus,
