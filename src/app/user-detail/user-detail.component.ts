@@ -13,6 +13,7 @@ export class UserDetailComponent implements OnInit {
   posts: any[] = [];
   comments: { [key: number]: any[] } = {};
   showComments: { [key: number]: boolean } = {};
+  newPost: string = ''; // Add a newPost variable to store the new post content
 
   constructor(
     private route: ActivatedRoute,
@@ -54,6 +55,19 @@ export class UserDetailComponent implements OnInit {
       });
     } else {
       this.showComments[postId] = !this.showComments[postId];
+    }
+  }
+
+  addPost(): void {
+    if (this.newPost.trim()) {
+      const post = {
+        userId: this.user.id,
+        body: this.newPost,
+      };
+      this.userService.addPost(post).subscribe((newPost: any) => {
+        this.posts.unshift(newPost); // Add the new post to the beginning of the posts array
+        this.newPost = ''; // Clear the input field
+      });
     }
   }
 }

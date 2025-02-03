@@ -8,6 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class UserService {
   private apiUrl = 'https://gorest.co.in/public/v2/';
+  addPost: any;
 
   constructor(private http: HttpClient) {}
 
