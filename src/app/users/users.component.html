@@ -33,6 +33,9 @@
           <div *ngIf="email.invalid && email.touched" class="error-message">
             Enter a valid email.
           </div>
+          <div *ngIf="emailExistsError" class="error-message">
+            Email already exists.
+          </div>
         </div>
         <div class="form-group">
           <label for="gender">Gender:</label>
@@ -54,8 +57,10 @@
   </div>
   <div class="modal delete-confirmation-modal" [ngClass]="{'show': isDeleteConfirmationVisible}">
     <div class="modal-content">
-      <span class="close" (click)="cancelDeleteUser()">&times;</span>
-      <h3>Confirm Delete</h3>
+      <div class="modal-header">
+        <h3>Confirm Delete</h3>
+        <span class="close" (click)="cancelDeleteUser()">&times;</span>
+      </div>
       <p>Are you sure you want to delete {{ userToDelete?.name }}?</p>
       <button class="btn btn-danger" (click)="confirmDeleteUser()">Delete</button>
       <button class="btn btn-secondary" (click)="cancelDeleteUser()">Cancel</button>

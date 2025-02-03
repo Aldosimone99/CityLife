@@ -22,6 +22,7 @@ export class UsersComponent implements OnInit {
   isAddUserFormVisible: boolean = false;
   isDeleteConfirmationVisible: boolean = false;
   userToDelete: any = null;
+  emailExistsError: boolean = false;
 
   constructor(@Inject(UserService) private userService: UserService, private router: Router) {}
 
@@ -40,15 +41,24 @@ export class UsersComponent implements OnInit {
   }
 
   createUser() {
+    if (this.checkEmailExists(this.newUser.email)) {
+      this.emailExistsError = true;
+      return;
+    }
     console.log('Creating user:', this.newUser); // Log per debug
     this.userService.createUser(this.newUser).subscribe(user => {
       this.users.push(user);
       this.filteredUsers.push(user);
       this.resetForm();
       this.hideAddUserForm();
+      this.emailExistsError = false;
     }, error => {
       console.error('Error creating user:', error); // Log per debug
     });
+  }
+
+  checkEmailExists(email: string): boolean {
+    return this.users.some(user => user.email === email);
   }
 
   deleteUser(id: number) {
