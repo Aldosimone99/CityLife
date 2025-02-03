@@ -48,9 +48,6 @@ export class UserService {
     );
   }
 
-
-
-
   addPost(userId: number, post: { body: string; title: string; }): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<any>(`${this.apiUrl}/users/${userId}/posts`, post, { headers }).pipe(
@@ -60,6 +57,12 @@ export class UserService {
 
   deleteUser(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/users/${id}`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  deletePost(postId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/posts/${postId}`).pipe(
       catchError(this.handleError)
     );
   }

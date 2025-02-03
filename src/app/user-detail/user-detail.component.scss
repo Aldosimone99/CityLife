@@ -50,26 +50,30 @@ main {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+    width: 60%; /* Reduce the width */
+    margin: 0 auto 20px auto; /* Center the input bar */
 
     textarea {
       width: 100%;
-      padding: 10px;
+      padding: 8px; /* Reduce padding */
       border-radius: 5px;
       border: 1px solid #ccc;
       background-color: #3a3b3c;
       color: white;
       resize: none;
+      font-size: 16px; /* Reduce font size */
     }
 
     button {
       align-self: flex-end;
-      padding: 10px 20px;
+      padding: 8px 16px; /* Reduce padding */
       border-radius: 5px;
       border: none;
       background-color: #007bff;
       color: white;
       cursor: pointer;
       transition: background-color 0.3s;
+      font-size: 14px; /* Reduce font size */
 
       &:hover {
         background-color: #0056b3;
@@ -142,6 +146,10 @@ main {
 
       &:hover {
         background-color: #3A3B3C;
+      }
+
+      &:last-child {
+        color: red; /* Set the delete button color to red */
       }
     }
   }

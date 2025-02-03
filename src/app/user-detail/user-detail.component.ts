@@ -58,7 +58,6 @@ export class UserDetailComponent implements OnInit {
     }
   }
 
-
   addPost(): void {
     if (this.newPost.trim()) {
       const post = {
@@ -72,5 +71,13 @@ export class UserDetailComponent implements OnInit {
         console.error('Error creating post:', error); // Log per debug
       });
     }
+  }
+
+  deletePost(postId: number): void {
+    this.userService.deletePost(postId).subscribe(() => {
+      this.posts = this.posts.filter(post => post.id !== postId); // Remove the deleted post from the posts array
+    }, (error: any) => {
+      console.error('Error deleting post:', error); // Log for debugging
+    });
   }
 }
