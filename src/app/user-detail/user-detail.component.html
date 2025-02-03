@@ -30,7 +30,7 @@
         </div>
         <div class="post-actions">
           <button (click)="toggleComments(post.id)">💬 Comments</button>
-          <button (click)="deletePost(post.id)">🗑️ Delete</button>
+          <button (click)="confirmDeletePost(post)">🗑️ Delete</button>
         </div>
         <div class="comments" *ngIf="showComments[post.id]">
           <div *ngFor="let comment of comments[post.id]" class="comment-box">
@@ -40,4 +40,13 @@
       </div>
     </section>
   </main>
+  <div class="modal delete-confirmation-modal" [ngClass]="{'show': isDeleteConfirmationVisible}">
+    <div class="modal-content">
+      <h3>Confirm Delete</h3>
+      <span class="close" (click)="cancelDeletePost()">&times;</span>
+      <p>Are you sure you want to delete this post?</p>
+      <button class="btn btn-danger" (click)="deletePost()">Delete</button>
+      <button class="btn btn-secondary" (click)="cancelDeletePost()">Cancel</button>
+    </div>
+  </div>
 </div>

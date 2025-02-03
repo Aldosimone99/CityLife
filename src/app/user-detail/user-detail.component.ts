@@ -14,6 +14,8 @@ export class UserDetailComponent implements OnInit {
   comments: { [key: number]: any[] } = {};
   showComments: { [key: number]: boolean } = {};
   newPost: string = ''; // Add a newPost variable to store the new post content
+  postToDelete: any = null; // Add a variable to store the post to be deleted
+  isDeleteConfirmationVisible: boolean = false; // Add a variable to control the visibility of the delete confirmation modal
 
   constructor(
     private route: ActivatedRoute,
@@ -73,11 +75,25 @@ export class UserDetailComponent implements OnInit {
     }
   }
 
-  deletePost(postId: number): void {
-    this.userService.deletePost(postId).subscribe(() => {
-      this.posts = this.posts.filter(post => post.id !== postId); // Remove the deleted post from the posts array
-    }, (error: any) => {
-      console.error('Error deleting post:', error); // Log for debugging
-    });
+  confirmDeletePost(post: any): void {
+    this.postToDelete = post;
+    this.isDeleteConfirmationVisible = true;
+  }
+
+  cancelDeletePost(): void {
+    this.postToDelete = null;
+    this.isDeleteConfirmationVisible = false;
+  }
+
+  deletePost(): void {
+    if (this.postToDelete) {
+      this.userService.deletePost(this.postToDelete.id).subscribe(() => {
+        this.posts = this.posts.filter(post => post.id !== this.postToDelete.id); // Remove the deleted post from the posts array
+        this.postToDelete = null;
+        this.isDeleteConfirmationVisible = false;
+      }, (error: any) => {
+        console.error('Error deleting post:', error); // Log for debugging
+      });
+    }
   }
 }
