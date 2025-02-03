@@ -24,17 +24,25 @@ export class UserDetailComponent implements OnInit {
     if (userId) {
       const userIdNumber = Number(userId); // Converti la stringa in numero
       if (!isNaN(userIdNumber)) {
-        this.userService.getUser(userIdNumber).subscribe(user => {
-          this.user = user;
-        });
-        this.userService.getUserPosts(userIdNumber).subscribe(posts => {
-          this.posts = posts;
-        });
+        this.loadUserData(userIdNumber);
       } else {
         console.error('Invalid user ID:', userId);
       }
     } else {
       console.error('User ID not found in route parameters');
+    }
+  }
+
+  loadUserData(userId: number): void {
+    if (!this.user) {
+      this.userService.getUser(userId).subscribe(user => {
+        this.user = user;
+      });
+    }
+    if (this.posts.length === 0) {
+      this.userService.getUserPosts(userId).subscribe(posts => {
+        this.posts = posts;
+      });
     }
   }
 
