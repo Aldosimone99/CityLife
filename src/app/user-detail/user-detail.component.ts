@@ -17,6 +17,8 @@ export class UserDetailComponent implements OnInit {
   postToDelete: any = null; // Add a variable to store the post to be deleted
   isDeleteConfirmationVisible: boolean = false; // Add a variable to control the visibility of the delete confirmation modal
   newComment: { [key: number]: string } = {}; // Add a newComment object to store new comments
+  commentToDelete: any = null; // Add a variable to store the comment to be deleted
+  isDeleteCommentConfirmationVisible: boolean = false; // Add a variable to control the visibility of the delete comment confirmation modal
 
   constructor(
     private route: ActivatedRoute,
@@ -114,6 +116,29 @@ export class UserDetailComponent implements OnInit {
         this.newComment[postId] = ''; // Clear the input field
       }, error => {
         console.error('Error adding comment:', error); // Log for debugging
+      });
+    }
+  }
+
+  confirmDeleteComment(comment: any): void {
+    this.commentToDelete = comment;
+    this.isDeleteCommentConfirmationVisible = true;
+  }
+
+  cancelDeleteComment(): void {
+    this.commentToDelete = null;
+    this.isDeleteCommentConfirmationVisible = false;
+  }
+
+  deleteComment(): void {
+    if (this.commentToDelete) {
+      this.userService.deleteComment(this.commentToDelete.id).subscribe(() => {
+        const postId = this.commentToDelete.postId;
+        this.comments[postId] = this.comments[postId].filter(comment => comment.id !== this.commentToDelete.id); // Remove the deleted comment from the comments array
+        this.commentToDelete = null;
+        this.isDeleteCommentConfirmationVisible = false;
+      }, (error: any) => {
+        console.error('Error deleting comment:', error); // Log for debugging
       });
     }
   }
