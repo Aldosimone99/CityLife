@@ -1,7 +1,7 @@
 :host {
   display: block;
   font-family: Arial, sans-serif;
-  background-color: #343a40;
+  background-color: #18191a;
   color: white;
   height: 100vh;
   width: 100vw;
@@ -151,7 +151,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #343a40;
+  background-color: #18191a;
   color: white;
   padding-top: 50px;
 }
