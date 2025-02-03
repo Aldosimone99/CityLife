@@ -8,7 +8,6 @@ import { catchError } from 'rxjs/operators';
 })
 export class UserService {
   private apiUrl = 'https://gorest.co.in/public/v2/';
-  addPost: any;
 
   constructor(private http: HttpClient) {}
 
@@ -45,6 +44,16 @@ export class UserService {
   createUser(newUser: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post<any>(`${this.apiUrl}/users`, newUser, { headers }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+
+
+
+  addPost(userId: number, post: { body: string; title: string; }): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(`${this.apiUrl}/users/${userId}/posts`, post, { headers }).pipe(
       catchError(this.handleError)
     );
   }

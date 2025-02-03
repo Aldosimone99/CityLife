@@ -58,15 +58,18 @@ export class UserDetailComponent implements OnInit {
     }
   }
 
+
   addPost(): void {
     if (this.newPost.trim()) {
       const post = {
-        userId: this.user.id,
         body: this.newPost,
+        title: 'Default Title' // Aggiungi un titolo di default se richiesto dall'API
       };
-      this.userService.addPost(post).subscribe((newPost: any) => {
-        this.posts.unshift(newPost); // Add the new post to the beginning of the posts array
-        this.newPost = ''; // Clear the input field
+      this.userService.addPost(this.user.id, post).subscribe((newPost: any) => {
+        this.posts.unshift(newPost); // Aggiungi il nuovo post all'inizio dell'array dei post
+        this.newPost = ''; // Pulisci il campo di input
+      }, error => {
+        console.error('Error creating post:', error); // Log per debug
       });
     }
   }
