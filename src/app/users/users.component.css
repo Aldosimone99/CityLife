@@ -74,14 +74,19 @@
   padding: 20px;
   border: 1px solid #817b7b;
   width: 380px;
-  height: 300px;
+  height: 250px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 15px; /* Increase the border radius */
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 60px; /* Add padding to move elements down */
+}
+
+.delete-confirmation-modal p {
+  margin-bottom: 15px; /* Add margin to move the paragraph down */
 }
 
 .delete-confirmation-modal .btn-danger,
@@ -89,10 +94,26 @@
   width: 346px; /* Set the width */
   height: 48px; /* Set the height */
   padding: 8px 16px; /* Adjust the padding */
-  margin: 4px;
+  margin: 4px 0; /* Reduce the margin between buttons */
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
+}
+
+.delete-confirmation-modal .modal-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.delete-confirmation-modal h3 {
+  font-size: 20px; /* Set the font size */
+  margin: 0; /* Remove default margin */
+  position: absolute;
+  top: 25px;
+  left: 20px;
 }
 
 .close {
@@ -104,6 +125,22 @@
 
 .close:hover,
 .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.delete-confirmation-modal .close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 13px; /* Move the close button higher */
+  right: 20px;
+}
+
+.delete-confirmation-modal .close:hover,
+.delete-confirmation-modal .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
