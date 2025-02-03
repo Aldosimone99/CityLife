@@ -54,7 +54,7 @@
     color: white;
     padding: 10px 20px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
   }
 
@@ -74,8 +74,8 @@
   margin: 20% auto;
   padding: 20px;
   border: 1px solid #817b7b;
-  width: 300px;
-  height: auto;
+  width: 380px;
+  height: 300px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -85,23 +85,14 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.delete-confirmation-modal .btn-danger {
-  background-color: red;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
+.delete-confirmation-modal .btn-danger,
 .delete-confirmation-modal .btn-secondary {
-  background-color: gray;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px;
+  width: 346px; /* Set the width */
+  height: 48px; /* Set the height */
+  padding: 8px 16px; /* Adjust the padding */
+  margin: 4px;
   border-radius: 5px;
+  font-size: 20px;
   cursor: pointer;
 }
 
