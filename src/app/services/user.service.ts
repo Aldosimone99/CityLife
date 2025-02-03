@@ -55,6 +55,13 @@ export class UserService {
     );
   }
 
+  addComment(postId: number, comment: { body: string; name: string; email: string; }): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(`${this.apiUrl}/posts/${postId}/comments`, comment, { headers }).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   deleteUser(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/users/${id}`).pipe(
       catchError(this.handleError)

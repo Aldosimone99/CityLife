@@ -155,6 +155,31 @@ main {
 .user-posts .comments .comment-box strong {
   font-weight: bold;
 }
+.user-posts .comments .add-comment {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.user-posts .comments .add-comment input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #3a3b3c;
+  color: white;
+}
+.user-posts .comments .add-comment button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.user-posts .comments .add-comment button:hover {
+  background-color: #0056b3;
+}
 
 .online-dot {
   display: inline-block;

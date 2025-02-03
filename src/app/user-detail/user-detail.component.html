@@ -36,6 +36,10 @@
           <div *ngFor="let comment of comments[post.id]" class="comment-box">
             <p><strong>{{ comment.name }}</strong>: {{ comment.body }}</p>
           </div>
+          <div class="add-comment">
+            <input type="text" [(ngModel)]="newComment[post.id]" placeholder="Add a comment...">
+            <button (click)="addComment(post.id)">Post</button>
+          </div>
         </div>
       </div>
     </section>
