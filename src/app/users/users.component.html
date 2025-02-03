@@ -52,4 +52,13 @@
       </form>
     </div>
   </div>
+  <div class="modal delete-confirmation-modal" [ngClass]="{'show': isDeleteConfirmationVisible}">
+    <div class="modal-content">
+      <span class="close" (click)="cancelDeleteUser()">&times;</span>
+      <h3>Confirm Delete</h3>
+      <p>Are you sure you want to delete {{ userToDelete?.name }}?</p>
+      <button class="btn btn-danger" (click)="confirmDeleteUser()">Delete</button>
+      <button class="btn btn-secondary" (click)="cancelDeleteUser()">Cancel</button>
+    </div>
+  </div>
 </div>

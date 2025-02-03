@@ -20,6 +20,8 @@ export class UsersComponent implements OnInit {
     status: 'active'
   };
   isAddUserFormVisible: boolean = false;
+  isDeleteConfirmationVisible: boolean = false;
+  userToDelete: any = null;
 
   constructor(@Inject(UserService) private userService: UserService, private router: Router) {}
 
@@ -50,10 +52,24 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe(() => {
-      this.users = this.users.filter(user => user.id !== id);
-      this.filteredUsers = this.filteredUsers.filter(user => user.id !== id);
-    });
+    this.userToDelete = this.users.find(user => user.id === id);
+    this.isDeleteConfirmationVisible = true;
+  }
+
+  confirmDeleteUser() {
+    if (this.userToDelete) {
+      this.userService.deleteUser(this.userToDelete.id).subscribe(() => {
+        this.users = this.users.filter(user => user.id !== this.userToDelete.id);
+        this.filteredUsers = this.filteredUsers.filter(user => user.id !== this.userToDelete.id);
+        this.isDeleteConfirmationVisible = false;
+        this.userToDelete = null;
+      });
+    }
+  }
+
+  cancelDeleteUser() {
+    this.isDeleteConfirmationVisible = false;
+    this.userToDelete = null;
   }
 
   viewUser(id: number) {
