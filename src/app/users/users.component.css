@@ -74,7 +74,7 @@
   padding: 20px;
   border: 1px solid #817b7b;
   width: 380px;
-  height: 250px;
+  height: 260px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@
   border-radius: 15px; /* Increase the border radius */
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 60px; /* Add padding to move elements down */
+  padding-top: 75px; /* Adjust padding as needed */
 }
 
 .delete-confirmation-modal p {
@@ -98,14 +98,6 @@
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
-}
-
-.delete-confirmation-modal .modal-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: center;
-  position: relative;
 }
 
 .delete-confirmation-modal h3 {
@@ -301,7 +293,6 @@ h1 {
 
 .modal-form button {
   width: 100%; /* Make the button take the full width */
-  height: 46px; /* Increase the height */
   padding: 10px;
   border-radius: 10px;
   border: none;
