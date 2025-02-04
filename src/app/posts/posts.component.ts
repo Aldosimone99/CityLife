@@ -14,6 +14,8 @@ export class PostsComponent implements OnInit {
   searchTerm: string = '';
   postsPerPage: number = 10; // Default number of posts per page
   postsPerPageOptions: number[] = [5, 10, 20, 50]; // Options for posts per page
+  isDeleteConfirmationVisible: boolean = false;
+  postIdToDelete: number | null = null;
 
   constructor(private postService: PostService, private userService: UserService) {}
 
@@ -45,13 +47,27 @@ export class PostsComponent implements OnInit {
     // Implement view comments logic
   }
 
-  deletePost(postId: number): void {
-    this.postService.deletePost(postId).subscribe(() => {
-      this.posts = this.posts.filter(post => post.id !== postId);
-      this.filteredPosts = this.posts.slice(0, this.postsPerPage); // Update the displayed posts based on the selected number
-    }, (error: any) => {
-      console.error('Error deleting post:', error); // Log for debugging
-    });
+  confirmDeletePost(postId: number): void {
+    this.postIdToDelete = postId;
+    this.isDeleteConfirmationVisible = true;
+  }
+
+  cancelDeletePost(): void {
+    this.postIdToDelete = null;
+    this.isDeleteConfirmationVisible = false;
+  }
+
+  deletePost(): void {
+    if (this.postIdToDelete !== null) {
+      this.postService.deletePost(this.postIdToDelete).subscribe(() => {
+        this.posts = this.posts.filter(post => post.id !== this.postIdToDelete);
+        this.filteredPosts = this.posts.slice(0, this.postsPerPage); // Update the displayed posts based on the selected number
+        this.cancelDeletePost();
+      }, (error: any) => {
+        console.error('Error deleting post:', error); // Log for debugging
+        this.cancelDeletePost();
+      });
+    }
   }
 
   loadAllPosts(): void {

@@ -1,4 +1,3 @@
-// filepath: /Users/aldosimone/Documents/GitHub/CityLife/src/app/services/local-storage.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,19 +6,32 @@ import { Injectable } from '@angular/core';
 export class LocalStorageService {
   constructor() {}
 
-  setItem(key: string, value: string): void {
-    localStorage.setItem(key, value);
+  isLocalStorageAvailable(): boolean {
+    return typeof localStorage !== 'undefined';
   }
 
   getItem(key: string): string | null {
-    return localStorage.getItem(key);
+    if (this.isLocalStorageAvailable()) {
+      return localStorage.getItem(key);
+    } else {
+      console.warn('localStorage is not available');
+      return null;
+    }
+  }
+
+  setItem(key: string, value: string): void {
+    if (this.isLocalStorageAvailable()) {
+      localStorage.setItem(key, value);
+    } else {
+      console.warn('localStorage is not available');
+    }
   }
 
   removeItem(key: string): void {
-    localStorage.removeItem(key);
-  }
-
-  clear(): void {
-    localStorage.clear();
+    if (this.isLocalStorageAvailable()) {
+      localStorage.removeItem(key);
+    } else {
+      console.warn('localStorage is not available');
+    }
   }
 }
