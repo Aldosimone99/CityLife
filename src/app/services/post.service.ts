@@ -42,4 +42,12 @@ export class PostService {
       })
     });
   }
+
+  deletePost(postId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/posts/${postId}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
+  }
 }

@@ -18,10 +18,6 @@ export class PostsComponent implements OnInit {
   constructor(private postService: PostService, private userService: UserService) {}
 
   ngOnInit() {
-    this.postService.getPosts().subscribe(data => {
-      this.posts = data;
-      this.filteredPosts = data.slice(0, this.postsPerPage); // Display the initial set of posts
-    });
     this.loadAllPosts();
   }
 
@@ -49,8 +45,17 @@ export class PostsComponent implements OnInit {
     // Implement view comments logic
   }
 
+  deletePost(postId: number): void {
+    this.postService.deletePost(postId).subscribe(() => {
+      this.posts = this.posts.filter(post => post.id !== postId);
+      this.filteredPosts = this.posts.slice(0, this.postsPerPage); // Update the displayed posts based on the selected number
+    }, (error: any) => {
+      console.error('Error deleting post:', error); // Log for debugging
+    });
+  }
+
   loadAllPosts(): void {
-    this.userService.getAllPosts().subscribe(posts => {
+    this.postService.getPosts().subscribe(posts => {
       this.posts = posts;
       this.filteredPosts = posts.slice(0, this.postsPerPage); // Display the initial set of posts
       this.posts.forEach(post => {

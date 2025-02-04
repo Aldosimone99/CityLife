@@ -124,4 +124,7 @@ h2 {
 }
 .post-actions button:last-child {
   color: #B0B3B8;
+}
+.post-actions button.delete-button {
+  color: red;
 }/*# sourceMappingURL=posts.component.css.map */

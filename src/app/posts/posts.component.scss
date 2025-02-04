@@ -133,5 +133,9 @@ h2 {
     &:last-child {
       color: #B0B3B8;
     }
+
+    &.delete-button {
+      color: red;
+    }
   }
 }
