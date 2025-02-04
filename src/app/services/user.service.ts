@@ -35,6 +35,12 @@ export class UserService {
     );
   }
 
+  getAllPosts(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/posts`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   getPostComments(postId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/posts/${postId}/comments`).pipe(
       catchError(this.handleError)

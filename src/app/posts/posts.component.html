@@ -1,11 +1,24 @@
+<app-navbar></app-navbar>
 <div class="container">
-    <h2>Posts</h2>
-    <input type="text" placeholder="Search posts" [(ngModel)]="searchTerm" (input)="searchPosts()">
-    <button class="btn btn-primary" (click)="createPost()">Add Post</button>
-    <ul class="list-group">
-      <li *ngFor="let post of filteredPosts" class="list-group-item">
-        {{ post.title }}
-        <button class="btn btn-info btn-sm float-right" (click)="viewComments(post.id)">View Comments</button>
-      </li>
-    </ul>
+  <h2>All Posts</h2>
+  <div class="search-bar">
+    <input type="text" placeholder="Search posts..." [(ngModel)]="searchTerm" (input)="searchPosts()">
+    <select [(ngModel)]="postsPerPage" (change)="updatePostsPerPage()">
+      <option *ngFor="let option of postsPerPageOptions" [value]="option">{{ option }}</option>
+    </select>
   </div>
+  <div class="post-container" *ngFor="let post of filteredPosts">
+    <div class="post-header">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Profile">
+      <div>
+        <strong>{{ post.userName }}</strong>
+      </div>
+    </div>
+    <div class="post-content">
+      {{ post.body }}
+    </div>
+    <div class="post-actions">
+      <button (click)="viewComments(post.id)">💬 Comments</button>
+    </div>
+  </div>
+</div>
