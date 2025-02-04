@@ -18,8 +18,17 @@
       {{ post.body }}
     </div>
     <div class="post-actions">
-      <button (click)="viewComments(post.id)">💬 Comments</button>
+      <button (click)="toggleComments(post.id)">💬 Comments</button>
       <button class="delete-button" (click)="confirmDeletePost(post.id)">🗑️ Delete</button>
+    </div>
+    <div class="comments" *ngIf="showComments[post.id]">
+      <div *ngFor="let comment of comments[post.id]" class="comment-box">
+        <p><strong>{{ comment.name }}</strong>: {{ comment.body }}</p>
+      </div>
+      <div class="add-comment">
+        <input type="text" [(ngModel)]="newComment[post.id]" placeholder="Add a comment...">
+        <button (click)="addComment(post.id)">Post</button>
+      </div>
     </div>
   </div>
   <div class="pagination-controls">

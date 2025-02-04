@@ -18,6 +18,9 @@ export class PostsComponent implements OnInit {
   postIdToDelete: number | null = null;
   currentPage: number = 1;
   totalPages: number = 1;
+  showComments: { [key: number]: boolean } = {};
+  comments: { [key: number]: any[] } = {};
+  newComment: { [key: number]: string } = {};
 
   constructor(private postService: PostService, private userService: UserService) {}
 
@@ -111,5 +114,36 @@ export class PostsComponent implements OnInit {
       this.currentPage--;
       this.updateFilteredPosts();
     }
+  }
+
+  toggleComments(postId: number): void {
+    if (this.showComments[postId]) {
+      this.showComments[postId] = false;
+    } else {
+      this.showComments[postId] = true;
+      if (!this.comments[postId]) {
+        this.postService.getPostComments(postId).subscribe(comments => {
+          this.comments[postId] = comments;
+        });
+      }
+    }
+  }
+
+  addComment(postId: number): void {
+    const comment = {
+      post_id: postId, // Ensure the post ID is included
+      name: 'User', // Use a generic user name
+      email: 'User@example.com', // Include a generic email
+      body: this.newComment[postId]
+    };
+    this.postService.addComment(postId, comment).subscribe(newComment => {
+      if (!this.comments[postId]) {
+        this.comments[postId] = [];
+      }
+      this.comments[postId].push(newComment);
+      this.newComment[postId] = '';
+    }, error => {
+      console.error('Error adding comment:', error); // Log for debugging
+    });
   }
 }

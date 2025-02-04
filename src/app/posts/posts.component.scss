@@ -242,3 +242,55 @@ h2 {
     font-size: 16px;
   }
 }
+
+.comments {
+  margin-top: 10px;
+
+  .comment-box {
+    background-color: #3a3b3c;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    p {
+      margin: 0;
+      font-size: 15px;
+      color: #e4e6eb;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  .add-comment {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #3a3b3c;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}
