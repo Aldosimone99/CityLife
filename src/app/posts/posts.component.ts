@@ -16,6 +16,8 @@ export class PostsComponent implements OnInit {
   postsPerPageOptions: number[] = [5, 10, 20, 50]; // Options for posts per page
   isDeleteConfirmationVisible: boolean = false;
   postIdToDelete: number | null = null;
+  currentPage: number = 1;
+  totalPages: number = 1;
 
   constructor(private postService: PostService, private userService: UserService) {}
 
@@ -73,7 +75,8 @@ export class PostsComponent implements OnInit {
   loadAllPosts(): void {
     this.postService.getPosts().subscribe(posts => {
       this.posts = posts;
-      this.filteredPosts = posts.slice(0, this.postsPerPage); // Display the initial set of posts
+      this.totalPages = Math.ceil(this.posts.length / this.postsPerPage);
+      this.updateFilteredPosts();
       this.posts.forEach(post => {
         this.userService.getUser(post.user_id).subscribe(user => {
           post.userName = user.name;
@@ -84,7 +87,29 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  updateFilteredPosts(): void {
+    const startIndex = (this.currentPage - 1) * this.postsPerPage;
+    const endIndex = startIndex + this.postsPerPage;
+    this.filteredPosts = this.posts.slice(startIndex, endIndex);
+  }
+
   updatePostsPerPage(): void {
-    this.filteredPosts = this.posts.slice(0, this.postsPerPage); // Update the displayed posts based on the selected number
+    this.totalPages = Math.ceil(this.posts.length / this.postsPerPage);
+    this.currentPage = 1;
+    this.updateFilteredPosts();
+  }
+
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.updateFilteredPosts();
+    }
+  }
+
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.updateFilteredPosts();
+    }
   }
 }

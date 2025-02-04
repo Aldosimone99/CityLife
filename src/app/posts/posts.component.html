@@ -22,6 +22,11 @@
       <button class="delete-button" (click)="confirmDeletePost(post.id)">🗑️ Delete</button>
     </div>
   </div>
+  <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
 </div>
 <div class="modal delete-confirmation-modal" [ngClass]="{'show': isDeleteConfirmationVisible}">
   <div class="modal-content">

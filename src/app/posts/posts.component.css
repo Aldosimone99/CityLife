@@ -126,7 +126,7 @@ h2 {
   color: #B0B3B8;
 }
 .post-actions button.delete-button {
-  color: red;
+  color: #B0B3B8;
 }
 
 .modal {
@@ -204,4 +204,28 @@ h2 {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.pagination-controls button {
+  background-color: #343a40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination-controls button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+.pagination-controls span {
+  color: white;
+  font-size: 16px;
 }/*# sourceMappingURL=posts.component.css.map */
