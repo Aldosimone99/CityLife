@@ -50,4 +50,12 @@ export class PostService {
       })
     });
   }
+
+  deleteComment(postId: number, commentId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/posts/${postId}/comments/${commentId}`, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    });
+  }
 }

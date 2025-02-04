@@ -21,6 +21,9 @@ export class PostsComponent implements OnInit {
   showComments: { [key: number]: boolean } = {};
   comments: { [key: number]: any[] } = {};
   newComment: { [key: number]: string } = {};
+  isDeleteCommentConfirmationVisible: boolean = false;
+  commentIdToDelete: number | null = null;
+  postIdForCommentToDelete: number | null = null;
 
   constructor(private postService: PostService, private userService: UserService) {}
 
@@ -145,5 +148,31 @@ export class PostsComponent implements OnInit {
     }, error => {
       console.error('Error adding comment:', error); // Log for debugging
     });
+  }
+
+  confirmDeleteComment(postId: number, commentId: number): void {
+    this.postIdForCommentToDelete = postId;
+    this.commentIdToDelete = commentId;
+    this.isDeleteCommentConfirmationVisible = true;
+  }
+
+  cancelDeleteComment(): void {
+    this.postIdForCommentToDelete = null;
+    this.commentIdToDelete = null;
+    this.isDeleteCommentConfirmationVisible = false;
+  }
+
+  deleteComment(): void {
+    if (this.postIdForCommentToDelete !== null && this.commentIdToDelete !== null) {
+      this.postService.deleteComment(this.postIdForCommentToDelete, this.commentIdToDelete).subscribe(() => {
+        if (this.postIdForCommentToDelete !== null) {
+          this.comments[this.postIdForCommentToDelete] = this.comments[this.postIdForCommentToDelete].filter(comment => comment.id !== this.commentIdToDelete);
+        }
+        this.cancelDeleteComment();
+      }, (error: any) => {
+        console.error('Error deleting comment:', error); // Log for debugging
+        this.cancelDeleteComment();
+      });
+    }
   }
 }

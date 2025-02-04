@@ -234,6 +234,7 @@ h2 {
   margin-top: 10px;
 }
 .comments .comment-box {
+  position: relative; /* Ensure the button is positioned correctly */
   background-color: #3a3b3c;
   padding: 10px;
   border-radius: 8px;
@@ -247,6 +248,22 @@ h2 {
 }
 .comments .comment-box strong {
   font-weight: bold;
+}
+.comments .comment-box button {
+  position: absolute; /* Ensure the button is positioned correctly */
+  top: 6px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.comments .comment-box button:hover {
+  color: red;
+}
+.comments .comment-box button i {
+  font-size: 1.2rem;
 }
 .comments .add-comment {
   display: flex;
@@ -273,4 +290,61 @@ h2 {
 }
 .comments .add-comment button:hover {
   background-color: #0056b3;
+}
+
+.delete-comment-confirmation-modal .modal-content {
+  background-color: rgba(52, 58, 64, 0.6274509804);
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #817b7b;
+  width: 380px;
+  height: 250px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 75px;
+}
+
+.delete-comment-confirmation-modal p {
+  margin-bottom: 15px;
+  margin-top: -10px;
+}
+
+.delete-comment-confirmation-modal .btn-danger,
+.delete-comment-confirmation-modal .btn-secondary {
+  width: 346px;
+  height: 48px;
+  padding: 8px 16px;
+  margin: 4px 0;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete-comment-confirmation-modal h3 {
+  font-size: 20px;
+  margin: 0;
+  position: absolute;
+  top: 25px;
+  left: 20px;
+}
+
+.delete-comment-confirmation-modal .close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 13px;
+  right: 20px;
+}
+
+.delete-comment-confirmation-modal .close:hover,
+.delete-comment-confirmation-modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }/*# sourceMappingURL=posts.component.css.map */

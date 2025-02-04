@@ -24,6 +24,9 @@
     <div class="comments" *ngIf="showComments[post.id]">
       <div *ngFor="let comment of comments[post.id]" class="comment-box">
         <p><strong>{{ comment.name }}</strong>: {{ comment.body }}</p>
+        <button (click)="confirmDeleteComment(post.id, comment.id)">
+          <i class="bi bi-trash3-fill"></i>
+        </button>
       </div>
       <div class="add-comment">
         <input type="text" [(ngModel)]="newComment[post.id]" placeholder="Add a comment...">
@@ -44,5 +47,14 @@
     <p>Are you sure you want to delete this post?</p>
     <button class="btn btn-danger" (click)="deletePost()">Delete</button>
     <button class="btn btn-secondary" (click)="cancelDeletePost()">Cancel</button>
+  </div>
+</div>
+<div class="modal delete-comment-confirmation-modal" [ngClass]="{'show': isDeleteCommentConfirmationVisible}">
+  <div class="modal-content">
+    <h3>Confirm Delete</h3>
+    <span class="close" (click)="cancelDeleteComment()">&times;</span>
+    <p>Are you sure you want to delete this comment?</p>
+    <button class="btn btn-danger" (click)="deleteComment()">Delete</button>
+    <button class="btn btn-secondary" (click)="cancelDeleteComment()">Cancel</button>
   </div>
 </div>
