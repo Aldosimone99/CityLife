@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,9 @@ export class PostService {
   private apiUrl = 'https://gorest.co.in/public/v2';
   private token = localStorage.getItem('authToken');
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
+    this.token = this.localStorageService.getItem('token');
+  }
 
   getPosts(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/posts`, {
