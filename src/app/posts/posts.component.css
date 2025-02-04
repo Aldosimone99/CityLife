@@ -1,10 +1,10 @@
-:host {
+:host, html, body {
   display: block;
   font-family: Arial, sans-serif;
   background-color: #18191a;
   color: #e4e6eb;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -120,4 +120,51 @@ h2 {
 }
 .post-actions button:last-child {
   color: #B0B3B8;
+}
+
+.comments {
+  margin-top: 10px;
+}
+.comments .comment-box {
+  background-color: #3a3b3c;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.comments .comment-box p {
+  margin: 0;
+  font-size: 15px;
+  color: #e4e6eb;
+}
+.comments .comment-box strong {
+  font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.pagination button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+.pagination span {
+  font-size: 16px;
+  color: #e4e6eb;
 }/*# sourceMappingURL=posts.component.css.map */

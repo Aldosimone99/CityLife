@@ -20,5 +20,15 @@
     <div class="post-actions">
       <button (click)="viewComments(post.id)">💬 Comments</button>
     </div>
+    <div class="comments" *ngIf="showComments[post.id]">
+      <div *ngFor="let comment of comments[post.id]" class="comment-box">
+        <p><strong>{{ comment.name }}</strong>: {{ comment.body }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
   </div>
 </div>

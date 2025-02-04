@@ -1,12 +1,13 @@
-:host {
+:host, html, body {
   display: block;
   font-family: Arial, sans-serif;
   background-color: #18191a;
   color: white;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 .modal {
