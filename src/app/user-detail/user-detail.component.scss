@@ -1,13 +1,12 @@
-:host, html, body {
+:host {
   display: block;
   font-family: Arial, sans-serif;
   background-color: #18191a;
   color: #e4e6eb;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* Ensure the background color covers the entire viewport height */
 }
 
 .container {
@@ -46,41 +45,6 @@ main {
   font-size: 25px;
   margin-top: 50px;
 
-  .add-post {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    width: 60%; /* Reduce the width */
-    margin: 0 auto 20px auto; /* Center the input bar */
-
-    textarea {
-      width: 100%;
-      padding: 8px; /* Reduce padding */
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      background-color: #3a3b3c;
-      color: white;
-      resize: none;
-      font-size: 16px; /* Reduce font size */
-    }
-
-    button {
-      align-self: flex-end;
-      padding: 8px 16px; /* Reduce padding */
-      border-radius: 5px;
-      border: none;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      font-size: 14px; /* Reduce font size */
-
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
-  }
 
   .post-container {
     width: 500px;
@@ -121,7 +85,7 @@ main {
 
   .post-content {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .post-image {
@@ -133,7 +97,7 @@ main {
   .post-actions {
     display: flex;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 8px 0;
     border-top: 1px solid #3A3B3C;
 
     button {
@@ -148,10 +112,6 @@ main {
       &:hover {
         background-color: #3A3B3C;
       }
-
-      &:last-child {
-        color: #B0B3B8;
-      }
     }
   }
 
@@ -159,7 +119,6 @@ main {
     margin-top: 10px;
 
     .comment-box {
-      position: relative; /* Add position relative to the comment box */
       background-color: #3a3b3c;
       padding: 10px;
       border-radius: 8px;
@@ -174,51 +133,6 @@ main {
 
       strong {
         font-weight: bold;
-      }
-
-      button {
-        position: absolute; /* Position the button absolutely */
-        top: 6px; /* Adjust the top position */
-        right: 10px; /* Adjust the right position */
-        background: none;
-        border: none;
-        color: inherit;
-        cursor: pointer;
-        font-size: 1.2rem;
-
-        &:hover {
-          color: red;
-        }
-      }
-    }
-
-    .add-comment {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      font-size: 16px;
-
-      input {
-        flex: 1;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        background-color: #3a3b3c;
-        color: white;
-      }
-
-      button {
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: none;
-        background-color: #007bff;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: #0056b3;
-        }
       }
     }
   }
@@ -240,137 +154,4 @@ main {
   background-color: red;
   border-radius: 50%;
   margin-right: 5px;
-}
-
-.delete-confirmation-modal .modal-content {
-  background-color: #343a40a0;
-  margin: 20% auto;
-  padding: 20px;
-  border: 1px solid #817b7b;
-  width: 380px;
-  height: 230px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 75px;
-}
-
-.delete-confirmation-modal p {
-  margin-bottom: 15px;
-  margin-top: -10px;
-}
-
-.delete-confirmation-modal .btn-danger,
-.delete-confirmation-modal .btn-secondary {
-  width: 346px;
-  height: 48px;
-  padding: 8px 16px;
-  margin: 4px 0;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.delete-confirmation-modal h3 {
-  font-size: 20px;
-  margin: 0;
-  position: absolute;
-  top: 25px;
-  left: 20px;
-}
-
-.delete-confirmation-modal .close {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
-  position: absolute;
-  top: 13px;
-  right: 20px;
-}
-
-.delete-confirmation-modal .close:hover,
-.delete-confirmation-modal .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.delete-comment-confirmation-modal .modal-content {
-  background-color: #343a40a0;
-  margin: 20% auto;
-  padding: 20px;
-  border: 1px solid #817b7b;
-  width: 390px; /* Increase the width */
-  height: 230px; /* Increase the height */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 75px;
-}
-
-.delete-comment-confirmation-modal p {
-  margin-bottom: 15px;
-  margin-top: -10px;
-}
-
-.delete-comment-confirmation-modal .btn-danger,
-.delete-comment-confirmation-modal .btn-secondary {
-  width: 346px;
-  height: 48px;
-  padding: 8px 16px;
-  margin: 4px 0;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.delete-comment-confirmation-modal h3 {
-  font-size: 20px;
-  margin: 0;
-  position: absolute;
-  top: 25px;
-  left: 20px;
-}
-
-.delete-comment-confirmation-modal .close {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
-  position: absolute;
-  top: 13px;
-  right: 20px;
-}
-
-.delete-comment-confirmation-modal .close:hover,
-.delete-comment-confirmation-modal .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  padding-top: 60px;
-}
-
-.modal.show {
-  display: block;
 }
