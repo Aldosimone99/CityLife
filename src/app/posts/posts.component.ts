@@ -24,6 +24,7 @@ export class PostsComponent implements OnInit {
   isDeleteCommentConfirmationVisible: boolean = false;
   commentIdToDelete: number | null = null;
   postIdForCommentToDelete: number | null = null;
+  newPostBody: string = ''; // Add a property to hold the new post body
 
   constructor(private postService: PostService, private userService: UserService) {}
 
@@ -41,13 +42,16 @@ export class PostsComponent implements OnInit {
 
   createPost() {
     const newPost = {
-      title: 'New Post Title',
-      body: 'New Post Body',
+      title: 'New Post', // Default title for new posts
+      body: this.newPostBody,
       user_id: 1 // Replace with the actual user ID
     };
     this.postService.createPost(newPost).subscribe(post => {
-      this.posts.push(post);
-      this.filteredPosts = this.posts.slice(0, this.postsPerPage); // Update the displayed posts based on the selected number
+      this.posts.unshift(post); // Add the new post to the beginning of the posts array
+      this.updateFilteredPosts(); // Update the displayed posts
+      this.newPostBody = ''; // Clear the new post body
+    }, error => {
+      console.error('Error creating post:', error); // Log for debugging
     });
   }
 

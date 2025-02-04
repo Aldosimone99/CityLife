@@ -50,7 +50,8 @@ main {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
-    width: 60%; /* Reduce the width */
+    width: 100%;
+    max-width: 500px;
     margin: 0 auto 20px auto; /* Center the input bar */
 
     textarea {
