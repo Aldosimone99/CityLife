@@ -23,21 +23,24 @@ export class UsersComponent implements OnInit {
   isDeleteConfirmationVisible: boolean = false;
   userToDelete: any = null;
   emailExistsError: boolean = false;
+  usersPerPage: number = 10; // Default number of users per page
+  usersPerPageOptions: number[] = [5, 10, 20, 50]; // Options for users per page
 
   constructor(@Inject(UserService) private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     this.userService.getUsers().subscribe(data => {
       this.users = data;
-      this.filteredUsers = data;
+      this.filteredUsers = data.slice(0, this.usersPerPage); // Display the initial set of users
     });
   }
 
   searchUsers() {
-    this.filteredUsers = this.users.filter(user =>
+    const filtered = this.users.filter(user =>
       user.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
       user.email.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+    this.filteredUsers = filtered.slice(0, this.usersPerPage); // Update the displayed users based on the search term and selected number
   }
 
   createUser() {
@@ -105,5 +108,9 @@ export class UsersComponent implements OnInit {
 
   hideAddUserForm() {
     this.isAddUserFormVisible = false;
+  }
+
+  updateUsersPerPage() {
+    this.filteredUsers = this.users.slice(0, this.usersPerPage); // Update the displayed users based on the selected number
   }
 }

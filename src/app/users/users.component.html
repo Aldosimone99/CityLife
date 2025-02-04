@@ -4,6 +4,9 @@
   <div class="search-bar">
     <input type="text" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}" [(ngModel)]="searchTerm" (input)="searchUsers()">
     <button class="btn btn-primary" (click)="showAddUserForm()">{{ 'ADD_USER' | translate }}</button>
+    <select [(ngModel)]="usersPerPage" (change)="updateUsersPerPage()">
+      <option *ngFor="let option of usersPerPageOptions" [value]="option">{{ option }}</option>
+    </select>
   </div>
   <div class="user-list">
     <div *ngFor="let user of filteredUsers" class="user-box" (click)="viewUser(user.id)">
