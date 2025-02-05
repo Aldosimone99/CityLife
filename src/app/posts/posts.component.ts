@@ -84,7 +84,7 @@ export class PostsComponent implements OnInit {
 
   loadAllPosts(): void {
     this.postService.getPosts().subscribe(posts => {
-      this.posts = posts;
+      this.posts = posts.filter((post: any) => post.isAvailable !== false); // Ensure the isAvailable property is correctly checked
       this.totalPages = Math.ceil(this.posts.length / this.postsPerPage);
       this.updateFilteredPosts();
       this.posts.forEach(post => {
