@@ -68,22 +68,23 @@ export class PostsComponent implements OnInit {
   }
 
   loadAllPosts(): void {
-    this.postService.getPosts().subscribe(posts => {
-      this.posts = posts.filter((post: any) => post.isAvailable !== false); // Ensure the isAvailable property is correctly checked
-      this.totalPages = Math.ceil(this.posts.length / this.postsPerPage);
-      this.updateFilteredPosts();
-      this.posts.forEach(post => {
-        this.userService.getUser(post.user_id).subscribe(user => {
-          post.userName = user.name;
-        }, error => {
-          if (error.status === 404) {
-            this.posts = this.posts.filter(p => p.user_id !== post.user_id); // Remove posts from unavailable users
-            this.updateFilteredPosts();
+    this.userService.getUsers().subscribe(users => {
+      const availableUserIds = new Set(users.map((user: any) => user.id));
+      this.postService.getPosts().subscribe(posts => {
+        this.posts = posts.filter((post: any) => availableUserIds.has(post.user_id));
+        this.posts.forEach(post => {
+          const user = users.find((user: any) => user.id === post.user_id);
+          if (user) {
+            post.userName = user.name;
           }
         });
+        this.totalPages = Math.ceil(this.posts.length / this.postsPerPage);
+        this.updateFilteredPosts();
+      }, error => {
+        console.error('Error loading posts:', error); // Log for debugging
       });
     }, error => {
-      console.error('Error loading posts:', error); // Log for debugging
+      console.error('Error loading users:', error); // Log for debugging
     });
   }
 
