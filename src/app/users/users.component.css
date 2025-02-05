@@ -153,12 +153,14 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 94%;
+  height: 80%;
   justify-content: flex-start;
   align-items: center;
   background: rgba(24, 25, 26, 0.8);
   color: white;
   padding-top: 50px;
+  margin-top: 50px;
+  border-radius: 10px;
 }
 
 h1 {
@@ -169,7 +171,7 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  margin-bottom: 150px;
+  margin-bottom: 80px;
   width: 50%;
   max-width: 600px;
 }

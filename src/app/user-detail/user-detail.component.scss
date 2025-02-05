@@ -7,12 +7,19 @@
   width: 100vw;
   margin: 0;
   padding: 0;
+  background-image: url('../../assets/imgs/city.jpg'); // Add your image path here
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; // Ensure the image does not repeat
 }
 
 .container {
   display: flex;
   width: 80%;
   margin: 20px auto;
+  background: rgba(24, 25, 26, 0.821); // Semi-transparent background
+  backdrop-filter: blur(3px); // Blur effect
+  border-radius: 10px; // Optional: add rounded corners
 }
 
 .sidebar {

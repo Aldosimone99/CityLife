@@ -154,12 +154,15 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 94%;
+  height: 80%;
   justify-content: flex-start;
   align-items: center;
   background: rgba(24, 25, 26, 0.8); // Semi-transparent background
   color: white;
   padding-top: 50px;
+  margin-top: 50px;
+  border-radius: 10px; // Optional: add rounded corners
+
 }
 
 h1 {
@@ -170,7 +173,7 @@ h1 {
   display: flex;
   justify-content: center; // Center the search bar
   margin-top: 20px;
-  margin-bottom: 150px;
+  margin-bottom: 80px;
   width: 50%; // Ensure the search bar takes up 50% of its container
   max-width: 600px; // Set a maximum width to ensure it doesn't get too wide
 
