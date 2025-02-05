@@ -1,17 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
   private apiUrl = 'https://gorest.co.in/public/v2';
-  private token = localStorage.getItem('authToken');
+  private token: string | null = null;
 
-  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
-    this.token = this.localStorageService.getItem('token');
+  constructor(
+    private http: HttpClient,
+    private localStorageService: LocalStorageService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.token = this.localStorageService.getItem('token');
+    }
   }
 
   getPosts(): Observable<any> {
@@ -31,9 +38,10 @@ export class PostService {
   }
 
   createPost(post: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/posts`, post, {
+    return this.http.post<any>(`${this.apiUrl}/users/7027348/posts`, post, {
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
+        'Authorization': `Bearer ${this.token}`,
+        'Content-Type': 'application/json' // Ensure Content-Type header is included
       })
     });
   }
