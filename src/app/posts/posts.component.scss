@@ -8,14 +8,22 @@
   margin: 0;
   padding: 0;
   overflow: hidden; // Changed from 1 to hidden
+  background-image: url('../../assets/imgs/city.jpg'); // Add your image path here
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; // Ensure the image does not repeat
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 40%;
   margin: 20px auto;
+  background: rgba(24, 25, 26, 0.8); // Semi-transparent background
+  backdrop-filter: blur(10px); // Blur effect
+  border-radius: 10px; // Optional: add rounded corners
+  padding: 20px; // Optional: add padding for better spacing
 }
 
 h2 {
