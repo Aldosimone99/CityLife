@@ -38,7 +38,7 @@ export class PostService {
   }
 
   createPost(post: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/users/7027348/posts`, post, {
+    return this.http.post<any>(`${this.apiUrl}/users/7045928/posts`, post, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`,
         'Content-Type': 'application/json' // Ensure Content-Type header is included
@@ -68,5 +68,9 @@ export class PostService {
         'Authorization': `Bearer ${this.token}`
       })
     });
+  }
+
+  addPost(post: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/posts`, post);
   }
 }

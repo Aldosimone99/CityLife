@@ -7,6 +7,10 @@
       <option *ngFor="let option of postsPerPageOptions" [value]="option">{{ option }}</option>
     </select>
   </div>
+  <div class="add-post">
+    <textarea [(ngModel)]="newPost" placeholder="Write a new post..."></textarea>
+    <button (click)="addPost()">Post</button>
+  </div>
   <div class="post-container" *ngFor="let post of filteredPosts">
     <div class="post-header">
       <img src="https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Profile">

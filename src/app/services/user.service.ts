@@ -86,6 +86,13 @@ export class UserService {
     );
   }
 
+  getCurrentUser(): Observable<any> {
+    // Use a valid user ID for the current user
+    return this.http.get<any>(`${this.apiUrl}/users/7045928`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   private handleError(error: any): Observable<never> {
     console.error('An error occurred:', error);
     return throwError('Something bad happened; please try again later.');

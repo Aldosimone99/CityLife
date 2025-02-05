@@ -9,11 +9,11 @@ import { UserService } from '../services/user.service';
   standalone: false,
 })
 export class PostsComponent implements OnInit {
-  user: any;
+  user: any = {}; // Initialize user object
   posts: any[] = [];
   filteredPosts: any[] = [];
   searchTerm: string = '';
-  postsPerPage: number = 10; // Default number of posts per page
+  postsPerPage: number = 5; // Default number of posts per page changed to 5
   postsPerPageOptions: number[] = [5, 10, 20, 50]; // Options for posts per page
   isDeleteConfirmationVisible: boolean = false;
   postIdToDelete: number | null = null;
@@ -25,11 +25,21 @@ export class PostsComponent implements OnInit {
   isDeleteCommentConfirmationVisible: boolean = false;
   commentIdToDelete: number | null = null;
   postIdForCommentToDelete: number | null = null;
+  newPost: string = ''; // Add a newPost variable to store the new post content
 
   constructor(private postService: PostService, private userService: UserService) {}
 
   ngOnInit() {
     this.loadAllPosts();
+    this.loadUser();
+  }
+
+  loadUser(): void {
+    this.userService.getCurrentUser().subscribe(user => {
+      this.user = user;
+    }, error => {
+      console.error('Error loading user:', error); // Log for debugging
+    });
   }
 
   searchPosts() {
@@ -41,7 +51,6 @@ export class PostsComponent implements OnInit {
   }
 
   viewComments(postId: number) {
-    // Implement view comments logic
   }
 
   confirmDeletePost(postId: number): void {
@@ -167,6 +176,23 @@ export class PostsComponent implements OnInit {
       }, (error: any) => {
         console.error('Error deleting comment:', error); // Log for debugging
         this.cancelDeleteComment();
+      });
+    }
+  }
+
+  addPost(): void {
+    if (this.newPost.trim()) {
+      const post = {
+        body: this.newPost,
+        title: 'Default Title', // Add a default title if required by the API
+        user_id: 7045928 // Use a fixed user ID for creating posts
+      };
+      this.postService.addPost(post).subscribe((newPost: any) => {
+        this.posts.unshift(newPost); // Add the new post to the beginning of the posts array
+        this.newPost = ''; // Clear the input field
+        this.updateFilteredPosts(); // Update the displayed posts
+      }, error => {
+        console.error('Error creating post:', error); // Log for debugging
       });
     }
   }
