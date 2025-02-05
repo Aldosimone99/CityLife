@@ -19,6 +19,7 @@ export class UserDetailComponent implements OnInit {
   newComment: { [key: number]: string } = {}; // Add a newComment object to store new comments
   commentToDelete: any = null; // Add a variable to store the comment to be deleted
   isDeleteCommentConfirmationVisible: boolean = false; // Add a variable to control the visibility of the delete comment confirmation modal
+userPosts: any;
 
   constructor(
     private route: ActivatedRoute,

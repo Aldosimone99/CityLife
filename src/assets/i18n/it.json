@@ -24,5 +24,23 @@
     "NAME_REQUIRED": "Il nome è obbligatorio.",
     "EMAIL_REQUIRED": "L'email è obbligatoria.",
     "EMAIL_EXISTS": "L'email esiste già.",
-    "ENTER_VALID_EMAIL": "Inserisci un'email valida."
-    }
+    "ENTER_VALID_EMAIL": "Inserisci un'email valida.",
+    "ALL_POSTS": "Tutti i Post",
+    "SEARCH_POSTS": "Cerca post...",
+    "WRITE_NEW_POST": "Scrivi un nuovo post...",
+    "POST": "Pubblica",
+    "COMMENTS": "Commenti",
+    "DELETE": "Elimina",
+    "ADD_COMMENT": "Aggiungi un commento...",
+    "PREVIOUS": "Precedente",
+    "PAGE": "Pagina",
+    "OF": "di",
+    "NEXT": "Successiva",
+    "CONFIRM_DELETE": "Conferma Eliminazione",
+    "CONFIRM_DELETE_POST": "Sei sicuro di voler eliminare questo post?",
+    "CONFIRM_DELETE_COMMENT": "Sei sicuro di voler eliminare questo commento?",
+    "CANCEL": "Annulla",
+    "USER_DETAILS": "Dettagli Utente",
+    "PROFILE_PICTURE": "Immagine del Profilo",
+    "USER_POSTS": "Post dell'Utente"
+}

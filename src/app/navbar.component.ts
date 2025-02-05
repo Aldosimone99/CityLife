@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '../app/services/local-storage.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +11,18 @@ import { LocalStorageService } from '../app/services/local-storage.service';
   standalone: false,
 })
 export class NavbarComponent {
-  constructor(private router: Router, private localStorageService: LocalStorageService) {}
+  constructor(
+    private router: Router,
+    private localStorageService: LocalStorageService,
+    private translate: TranslateService
+  ) {}
 
   logout() {
     this.localStorageService.removeItem('token'); // Rimuove il token usando il servizio LocalStorageService
     this.router.navigate(['/login']); // Reindirizza alla pagina di login
+  }
+
+  changeLanguage(language: string) {
+    this.translate.use(language);
   }
 }
