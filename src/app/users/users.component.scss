@@ -7,6 +7,10 @@
   width: 100vw;
   margin: 0;
   padding: 0;
+  background-image: url('../../assets/imgs/city.jpg'); // Add your image path here
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; // Ensure the image does not repeat
 }
 
 .modal {
@@ -150,9 +154,10 @@
 .container {
   display: flex;
   flex-direction: column;
+  height: 94%;
   justify-content: flex-start;
   align-items: center;
-  background-color: #18191a;
+  background: rgba(24, 25, 26, 0.8); // Semi-transparent background
   color: white;
   padding-top: 50px;
 }

@@ -21,8 +21,6 @@
   width: 40%;
   margin: 20px auto;
   background: rgba(24, 25, 26, 0.8);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 20px;
 }
