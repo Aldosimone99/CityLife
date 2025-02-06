@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { LocalStorageService } from './local-storage.service';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,27 +9,42 @@ export class AuthService {
   private apiUrl = 'https://gorest.co.in/public/v2/';
   private tokenKey = 'authToken';
 
-  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {}
+  constructor(private http: HttpClient) {}
 
   login(credentials: { token: string }): Observable<any> {
-    // Simulate a successful login by returning an observable with the token
-    this.setToken(credentials.token);
-    return of({ success: true });
-  }
-
-  logout(): void {
-    this.localStorageService.removeItem(this.tokenKey);
+    return this.http.get(`${this.apiUrl}users`, {
+      headers: { Authorization: `Bearer ${credentials.token}` }
+    }).pipe(
+      map(response => {
+        this.setToken(credentials.token);
+        return { success: true };
+      }),
+      catchError(error => {
+        return of({ success: false });
+      })
+    );
   }
 
   isAuthenticated(): boolean {
-    return this.getToken() !== null;
+    const token = localStorage.getItem(this.tokenKey);
+    return token !== null && this.isValidToken(token);
+  }
+
+  private isValidToken(token: string): boolean {
+    // Implementa la logica per verificare se il token è valido
+    // Ad esempio, puoi decodificare il token e verificare la sua scadenza
+    return true; // Modifica questa logica in base alle tue esigenze
+  }
+
+  logout(): void {
+    if (typeof localStorage !== 'undefined') {
+      localStorage.removeItem(this.tokenKey);
+    }
   }
 
   setToken(token: string): void {
-    this.localStorageService.setItem(this.tokenKey, token);
-  }
-
-  getToken(): string | null {
-    return this.localStorageService.getItem(this.tokenKey);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem(this.tokenKey, token);
+    }
   }
 }

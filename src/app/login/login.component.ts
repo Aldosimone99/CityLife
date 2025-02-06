@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -28,9 +28,15 @@ export class LoginComponent {
     }
 
     this.authService.login({ token: this.token }).subscribe(
-      () => {
-        this.authService.setToken(this.token);
-        this.router.navigate(['/users']);
+      (response) => {
+        if (response.success) {
+          this.authService.setToken(this.token);
+          this.router.navigate(['/users']);
+        } else {
+          this.translate.get('INVALID_TOKEN').subscribe((res: string) => {
+            this.errorMessage = res;
+          });
+        }
       },
       (error: any) => {
         console.error('Invalid token', error);

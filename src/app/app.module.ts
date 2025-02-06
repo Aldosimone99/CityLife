@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptors';
-import { LocalStorageService } from './services/local-storage.service';
 
 
 import { StoreModule } from '@ngrx/store';
@@ -55,7 +54,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [
-    LocalStorageService,
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

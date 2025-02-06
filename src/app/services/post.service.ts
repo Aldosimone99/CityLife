@@ -1,7 +1,6 @@
 import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LocalStorageService } from './local-storage.service';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -13,11 +12,10 @@ export class PostService {
 
   constructor(
     private http: HttpClient,
-    private localStorageService: LocalStorageService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     if (isPlatformBrowser(this.platformId)) {
-      this.token = this.localStorageService.getItem('token');
+      this.token = localStorage.getItem('authToken');
     }
   }
 
