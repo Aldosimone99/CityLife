@@ -1,59 +1,88 @@
 # CityLife
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.2.
+CityLife è un'applicazione web sviluppata con [Angular CLI](https://github.com/angular/angular-cli) versione 19.1.2. L'applicazione consente agli utenti di connettersi con i loro concittadini, condividere idee e collaborare per costruire il futuro della loro città.
 
-## Development server
+## Funzionalità
 
-To start a local development server, run:
+- **Autenticazione**: Registrazione e accesso degli utenti.
+- **Gestione Utenti**: Aggiunta, modifica e rimozione di utenti.
+- **Post e Commenti**: Creazione, visualizzazione e gestione di post e commenti.
+- **Ricerca**: Ricerca di utenti e post.
+- **Multilingua**: Supporto per più lingue (es. Inglese, Italiano).
+
+## Requisiti
+
+- Node.js
+- Angular CLI
+
+## Installazione
+
+Per installare le dipendenze del progetto, eseguire:
+
+```bash
+npm install
+```
+
+## Server di sviluppo
+
+Per avviare un server di sviluppo locale, eseguire:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Una volta avviato il server, aprire il browser e navigare a `http://localhost:4200/`. L'applicazione si ricaricherà automaticamente ogni volta che si modificano i file sorgente.
 
-## Code scaffolding
+## Creazione di componenti
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Angular CLI include potenti strumenti di scaffolding del codice. Per generare un nuovo componente, eseguire:
 
 ```bash
-ng generate component component-name
+ng generate component nome-componente
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Per un elenco completo degli schemi disponibili (come `components`, `directives` o `pipes`), eseguire:
 
 ```bash
 ng generate --help
 ```
 
-## Building
+## Build
 
-To build the project run:
+Per compilare il progetto, eseguire:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Questo comando compilerà il progetto e memorizzerà gli artefatti di build nella directory `dist/`. Per impostazione predefinita, la build di produzione ottimizza l'applicazione per prestazioni e velocità.
 
-## Running unit tests
+## Test unitari
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Per eseguire i test unitari con il test runner [Karma](https://karma-runner.github.io), utilizzare il seguente comando:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Test end-to-end
 
-For end-to-end (e2e) testing, run:
+Per eseguire i test end-to-end (e2e), eseguire:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Angular CLI non include un framework di test end-to-end per impostazione predefinita. È possibile scegliere quello che meglio si adatta alle proprie esigenze.
 
-## Additional Resources
+## Risorse aggiuntive
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Per ulteriori informazioni sull'utilizzo di Angular CLI, inclusi i riferimenti dettagliati ai comandi, visitare la pagina [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).
+
+## Contributi
+
+I contributi sono benvenuti! Sentiti libero di aprire issue o pull request per migliorare il progetto.
+
+## Licenza
+
+Questo progetto è distribuito sotto licenza MIT. Vedi il file [LICENSE](LICENSE) per ulteriori dettagli.
