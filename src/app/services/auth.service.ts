@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,13 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    const token = localStorage.getItem(this.tokenKey);
-    return token !== null && this.isValidToken(token);
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      const token = localStorage.getItem(this.tokenKey);
+      return token !== null && this.isValidToken(token);
+    } else {
+      console.error('localStorage is not available');
+      return false;
+    }
   }
 
   private isValidToken(token: string): boolean {
@@ -37,13 +43,13 @@ export class AuthService {
   }
 
   logout(): void {
-    if (typeof localStorage !== 'undefined') {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       localStorage.removeItem(this.tokenKey);
     }
   }
 
   setToken(token: string): void {
-    if (typeof localStorage !== 'undefined') {
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       localStorage.setItem(this.tokenKey, token);
     }
   }
