@@ -377,7 +377,18 @@ h1 {
   line-height: 0.2; /* Riduci l'altezza della linea */
 }
 
-@media (max-width: 768px) {
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 390px) {
   :host {
     height: 100vh;
     width: 100vw;
@@ -386,101 +397,6 @@ h1 {
   }
 
   .container {
-    width: 100%;
-    margin: 25px 0;
-    padding: 10px;
-    margin-bottom: 70px;
-  }
-
-  .search-bar {
-    width: 100%;
-    margin-bottom: 10px;
-
-    input, select {
-      width: 100%;
-      margin: 5px 0;
-    }
-  }
-
-  .user-list {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 10px; // Add padding to the user list
-  }
-
-  .user-box {
-    display: flex;
-    align-items: center;
-    background-color: #444;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    padding: 10px;
-    border-radius: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    
-    &:hover {
-      background-color: #555;
-    }
-
-    img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin-right: 15px;
-    }
-
-    .user-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .user-name {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .user-status {
-      font-size: 14px;
-      color: #ccc;
-    }
-  }
-
-  .modal-content {
-    width: 90%;
-    height: auto;
-    padding: 20px;
-  }
-
-  .delete-confirmation-modal .modal-content {
-    width: 350px;
-    height: 250px;
-    padding: auto;
-    margin-top: 250px;
-  }
-
-  .delete-confirmation-modal .btn-danger,
-  .delete-confirmation-modal .btn-secondary {
-    width: 100%;
-    height: auto;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  :host {
-    height: 100vh;
-    width: 100vw;
-    padding: 10px;
-    background-image: none; // Hide background image on mobile
-    margin-bottom: 70px;
-  }
-
-  .container {
-    width: 100%;
     margin: 25px 0;
     padding: 10px;
   }
@@ -498,7 +414,7 @@ h1 {
   .user-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
     padding: 0 10px; // Add padding to the user list
   }
 
@@ -506,7 +422,8 @@ h1 {
     display: grid;
     grid-auto-flow: column;
     align-items: flex-start;
-    background-color: #444;
+    background-color: #303030;
+    border: 1px solid rgba(22, 18, 18, 0.75);
     color: white;
     width: 100%;
     height: 80px;
@@ -528,7 +445,7 @@ h1 {
     }
 
     .user-name {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       position: absolute;
       top: 25px; /* Sposta in basso */
@@ -536,7 +453,7 @@ h1 {
     }
 
     .user-status {
-      font-size: 14px;
+      font-size: 10px;
       color: #ccc;
       position: absolute;
       top: 40px; /* Sposta in basso */
@@ -544,10 +461,137 @@ h1 {
     }
 
     .delete-btn {
-      font-size: 1.5rem;
+      font-size: 20px;
+      position: absolute;
+      top: 45px; /* Sposta in basso */
+      left: 35px; /* Sposta a destra */
+    }
+  }
+
+  .modal-content {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .delete-confirmation-modal .modal-content {
+    width: 350px;
+    height: 250px;
+    padding: auto;
+    margin-top: 250px;
+  }
+
+  .delete-confirmation-modal .btn-danger,
+  .delete-confirmation-modal .btn-secondary {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+  }
+
+  .add-user-icon {
+    cursor: pointer;
+    margin-left: 10px; // Adjust the margin as needed
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  :host {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background-image: none; // Hide background image on mobile
+    margin-bottom: 80px;
+  }
+
+  .container {
+    margin: 25px 0;
+    padding: 10px;
+  }
+
+  .search-bar {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+
+    input {
+      width: 70%; // Adjust the width for input
+      margin: 5px 0;
+    }
+
+    select {
+      width: 20%; // Adjust the width for select
+      margin: 5px 0;
+    }
+  }
+
+  .user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 0 10px; // Add padding to the user list
+  }
+
+  .user-box {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: flex-start;
+    background-color: #303030;
+    border: 1px solid rgba(22, 18, 18, 0.75);
+    color: white;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    &:hover {
+      background-color: #555;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      position: absolute;
+      top: 14px; /* Sposta in basso */
+      left: 20px; /* Sposta a destra */
+    }
+
+    .user-name {
+      font-size: 18px;
+      font-weight: bold;
+      position: absolute;
+      top: 25px; /* Sposta in basso */
+      left: 80px; /* Sposta a destra */
+    }
+
+    .user-status {
+      font-size: 10px;
+      color: #ccc;
       position: absolute;
       top: 40px; /* Sposta in basso */
       left: 333px; /* Sposta a destra */
+    }
+
+    .delete-btn {
+      font-size: 20px;
+      position: absolute;
+      top: 45px; /* Sposta in basso */
+      left: 335px; /* Sposta a destra */
     }
   }
 
@@ -570,5 +614,28 @@ h1 {
     width: 100%;
     height: auto;
     font-size: 16px;
+  }
+
+  .add-user-icon {
+    cursor: pointer;
+    margin-left: 10px; // Adjust the margin as needed
+    margin-bottom: 7px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%; // Ensure the search bar takes up the full width
+    margin-bottom: 10px;
+
+    input {
+      width: 70%; // Adjust the width for input
+      margin: 5px 0;
+    }
+
+    select {
+      width: 30%; // Adjust the width for select
+      margin: 5px 0;
+    }
   }
 }

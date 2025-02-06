@@ -1,9 +1,14 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <h2>{{ 'USERS' | translate }}</h2>
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>{{ 'USERS' | translate }}</h2>
+    <div class="add-user-icon d-lg-none" (click)="showAddUserForm()">
+      <i class="bi bi-plus-circle" style="font-size: 24px;"></i>
+    </div>
+  </div>
   <div class="search-bar">
     <input type="text" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}" [(ngModel)]="searchTerm" (input)="searchUsers()">
-    <button class="btn btn-primary" (click)="showAddUserForm()">{{ 'ADD_USER' | translate }}</button>
+    <button class="btn btn-primary d-none d-lg-inline" (click)="showAddUserForm()">{{ 'ADD_USER' | translate }}</button>
     <select [(ngModel)]="usersPerPage" (change)="updateUsersPerPage()">
       <option *ngFor="let option of usersPerPageOptions" [value]="option">{{ option }}</option>
     </select>
