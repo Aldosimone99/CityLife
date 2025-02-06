@@ -392,6 +392,9 @@ h2 {
 }
 
 @media (max-width: 768px) {
+  :host, body, html {
+    background-image: none;
+  }
   .container {
     width: 80%;
     margin: 10px auto;
@@ -445,6 +448,9 @@ h2 {
   }
 }
 @media (max-width: 480px) {
+  :host, body, html {
+    background-image: none;
+  }
   .container {
     width: 90%;
     margin: 5px auto;

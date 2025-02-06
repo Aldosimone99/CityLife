@@ -387,6 +387,7 @@ main {
     width: 100vw;
     padding: 10px;
     overflow-x: hidden; // Prevent horizontal overflow
+    background-image: none; // Hide background image on mobile
   }
 
   html, body {
@@ -456,6 +457,7 @@ main {
     width: 100vw;
     padding: 10px;
     overflow-x: hidden; // Prevent horizontal overflow
+    background-image: none; // Hide background image on mobile
   }
 
   html, body {

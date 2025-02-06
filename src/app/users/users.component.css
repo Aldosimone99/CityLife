@@ -366,4 +366,96 @@ h1 {
   margin-top: 0; /* Rimuovi completamente lo spazio sopra il messaggio di errore */
   margin-bottom: 0; /* Rimuovi completamente lo spazio sotto il messaggio di errore */
   line-height: 0.2; /* Riduci l'altezza della linea */
+}
+
+@media (max-width: 768px) {
+  :host {
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    background-image: none;
+  }
+  .container {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .search-bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .search-bar input, .search-bar select {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .user-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .user-box {
+    width: 48%;
+    height: auto;
+  }
+  .modal-content {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  .delete-confirmation-modal .modal-content {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  .delete-confirmation-modal .btn-danger,
+  .delete-confirmation-modal .btn-secondary {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  :host {
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    background-image: none;
+  }
+  .container {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+  }
+  .search-bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .search-bar input, .search-bar select {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .user-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .user-box {
+    width: 100%;
+    height: auto;
+  }
+  .modal-content {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  .delete-confirmation-modal .modal-content {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  .delete-confirmation-modal .btn-danger,
+  .delete-confirmation-modal .btn-secondary {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=users.component.css.map */

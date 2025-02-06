@@ -361,6 +361,7 @@ main {
     width: 100vw;
     padding: 10px;
     overflow-x: hidden;
+    background-image: none;
   }
   html, body {
     height: 100%;
@@ -419,6 +420,7 @@ main {
     width: 100vw;
     padding: 10px;
     overflow-x: hidden;
+    background-image: none;
   }
   html, body {
     height: 100%;
