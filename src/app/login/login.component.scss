@@ -175,7 +175,7 @@ button {
 @media (max-width: 768px) {
   .login-page {
     flex-direction: column;
-    background-image: url('/path/to/mobile-background.jpg'); /* Add background image */
+    background-image: url('../../assets/imgs/loginwallpaper.gif'); /* Add background image */
     background-size: cover;
     background-position: center;
   }
@@ -183,6 +183,7 @@ button {
   .form-section {
     padding: 20px;
     max-width: 100%;
+    background-color: #ffffff00
   }
 
   .image-section {
