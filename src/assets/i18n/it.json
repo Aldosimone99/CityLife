@@ -40,5 +40,6 @@
     "CONFIRM_DELETE_POST": "Sei sicuro di voler eliminare questo post?",
     "CONFIRM_DELETE_COMMENT": "Sei sicuro di voler eliminare questo commento?",
     "CANCEL": "Annulla",
-    "CONFIRM_DELETE_USER": "Sei sicuro di voler eliminare"
+    "CONFIRM_DELETE_USER": "Sei sicuro di voler eliminare",
+    "LOGOUT": "Esci"
 }

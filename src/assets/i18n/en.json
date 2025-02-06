@@ -7,6 +7,7 @@
     "GET_HERE": "Get here", 
     "SIGN_UP": "Sign up",
     "SIGN_IN": "Sign in",
+    "LOGOUT": "Logout",
     "INVALID_TOKEN": "Invalid token",
     "PLEASE_INSERT_TOKEN": "Please insert a token",
     "WELCOME_MESSAGE": "Welcome to CityLife – Connect with fellow citizens, share your thoughts, and shape the future of your city together!",
