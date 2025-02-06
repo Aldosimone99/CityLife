@@ -397,8 +397,9 @@ h2 {
   }
   .container {
     width: 80%;
-    margin: 10px auto;
+    margin: 25px auto;
     padding: 10px;
+    margin-bottom: 70px;
   }
   .search-bar {
     flex-direction: row;
@@ -453,8 +454,9 @@ h2 {
   }
   .container {
     width: 90%;
-    margin: 5px auto;
+    margin: 25px auto;
     padding: 5px;
+    margin-bottom: 70px;
   }
   .search-bar {
     flex-direction: row;

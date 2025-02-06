@@ -377,8 +377,9 @@ h1 {
   }
   .container {
     width: 100%;
-    margin: 10px 0;
+    margin: 25px 0;
     padding: 10px;
+    margin-bottom: 70px;
   }
   .search-bar {
     width: 100%;
@@ -403,9 +404,10 @@ h1 {
     padding: 20px;
   }
   .delete-confirmation-modal .modal-content {
-    width: 90%;
-    height: auto;
-    padding: 20px;
+    width: 350px;
+    height: 250px;
+    padding: auto;
+    margin-top: 250px;
   }
   .delete-confirmation-modal .btn-danger,
   .delete-confirmation-modal .btn-secondary {
@@ -420,10 +422,11 @@ h1 {
     width: 100%;
     padding: 10px;
     background-image: none;
+    margin-bottom: 70px;
   }
   .container {
     width: 100%;
-    margin: 10px 0;
+    margin: 25px 0;
     padding: 10px;
   }
   .search-bar {
@@ -448,9 +451,10 @@ h1 {
     padding: 20px;
   }
   .delete-confirmation-modal .modal-content {
-    width: 90%;
-    height: auto;
-    padding: 20px;
+    width: 350px;
+    height: 250px;
+    padding: auto;
+    margin-top: 250px;
   }
   .delete-confirmation-modal .btn-danger,
   .delete-confirmation-modal .btn-secondary {

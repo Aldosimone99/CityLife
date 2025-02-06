@@ -374,6 +374,7 @@ main {
     width: 100%;
     margin: 10px 0;
     flex-direction: column;
+    margin-bottom: 70px;
   }
   .sidebar {
     width: 100%;
@@ -382,6 +383,7 @@ main {
   }
   main {
     width: 100%;
+    margin-top: -40px;
   }
   .profile-image {
     width: 100px;
@@ -433,6 +435,7 @@ main {
     width: 100%;
     margin: 10px 0;
     flex-direction: column;
+    margin-bottom: 70px;
   }
   .sidebar {
     width: 100%;
@@ -441,6 +444,7 @@ main {
   }
   main {
     width: 100%;
+    margin-top: -40px;
   }
   .profile-image {
     width: 100px;

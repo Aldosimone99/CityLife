@@ -387,8 +387,9 @@ h1 {
 
   .container {
     width: 100%;
-    margin: 10px 0;
+    margin: 25px 0;
     padding: 10px;
+    margin-bottom: 70px;
   }
 
   .search-bar {
@@ -419,9 +420,10 @@ h1 {
   }
 
   .delete-confirmation-modal .modal-content {
-    width: 90%;
-    height: auto;
-    padding: 20px;
+    width: 350px;
+    height: 250px;
+    padding: auto;
+    margin-top: 250px;
   }
 
   .delete-confirmation-modal .btn-danger,
@@ -438,11 +440,12 @@ h1 {
     width: 100%;
     padding: 10px;
     background-image: none; // Hide background image on mobile
+    margin-bottom: 70px;
   }
 
   .container {
     width: 100%;
-    margin: 10px 0;
+    margin: 25px 0;
     padding: 10px;
   }
 
@@ -473,9 +476,10 @@ h1 {
   }
 
   .delete-confirmation-modal .modal-content {
-    width: 90%;
-    height: auto;
-    padding: 20px;
+    width: 350px;
+    height: 250px;
+    padding: auto;
+    margin-top: 250px;
   }
 
   .delete-confirmation-modal .btn-danger,
