@@ -389,4 +389,81 @@ h2 {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+  }
+  .search-bar {
+    flex-direction: row;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .search-bar input, .search-bar select {
+    width: 20%;
+    margin: 5px 0;
+  }
+  .add-post {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .add-post textarea {
+    width: 100%;
+  }
+  .add-post button {
+    width: 100%;
+  }
+  .post-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .pagination-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pagination-controls button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    margin: 5px auto;
+    padding: 5px;
+  }
+  .search-bar {
+    flex-direction: row;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .search-bar input, .search-bar select {
+    width: 20%;
+    margin: 5px 0;
+  }
+  .add-post {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .add-post textarea {
+    width: 100%;
+  }
+  .add-post button {
+    width: 100%;
+  }
+  .post-container {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .pagination-controls {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .pagination-controls button {
+    width: 100%;
+    margin: 5px 0;
+  }
 }/*# sourceMappingURL=posts.component.css.map */

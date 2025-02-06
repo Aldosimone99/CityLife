@@ -416,3 +416,97 @@ h2 {
   text-decoration: none;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+  }
+
+  .search-bar {
+    flex-direction: row;
+    width: 90%;
+    margin-bottom: 10px;
+
+    input, select {
+      width: 20%;
+      margin: 5px 0;
+    }
+  }
+
+  .add-post {
+    width: 100%;
+    margin: 10px 0;
+
+    textarea {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .post-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    margin: 5px auto;
+    padding: 5px;
+  }
+
+  .search-bar {
+    flex-direction: row;
+    width: 90%;
+    margin-bottom: 10px;
+
+    input, select {
+      width: 20%;
+      margin: 5px 0;
+    }
+  }
+
+  .add-post {
+    width: 100%;
+    margin: 5px 0;
+
+    textarea {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .post-container {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    gap: 5px;
+
+    button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+}
