@@ -11,6 +11,9 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: false,
 })
 export class AppComponent implements OnInit {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   showNavbar: boolean = true;
   currentLang: string = 'en'; // Lingua corrente (default)
   searchQuery: string = ''; // Query di ricerca
