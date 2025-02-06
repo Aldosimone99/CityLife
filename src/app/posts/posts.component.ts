@@ -182,17 +182,32 @@ export class PostsComponent implements OnInit {
 
   addPost(): void {
     if (this.newPost.trim()) {
-      const post = {
-        body: this.newPost,
-        title: 'Default Title', // Add a default title if required by the API
-        user_id: 7045928 // Use a fixed user ID for creating posts
-      };
-      this.postService.addPost(post).subscribe((newPost: any) => {
-        this.posts.unshift(newPost); // Add the new post to the beginning of the posts array
-        this.newPost = ''; // Clear the input field
-        this.updateFilteredPosts(); // Update the displayed posts
+      this.userService.getUsers().subscribe(users => {
+        const randomUser = users[Math.floor(Math.random() * users.length)]; // Select a random user
+        const userId = randomUser.id;
+
+        const post = {
+          body: this.newPost,
+          title: 'Default Title', // Add a default title if required by the API
+          user_id: userId // Use the random user's ID
+        };
+
+        this.postService.addPost(post).subscribe((newPost: any) => {
+          this.posts.unshift(newPost); // Add the new post to the beginning of the posts array
+          this.newPost = ''; // Clear the input field
+          this.updateFilteredPosts(); // Update the displayed posts
+        }, (error: any) => {
+          if (error.status === 422) {
+            console.error('Validation error:', error.error); // Log validation errors
+            error.error.forEach((err: any) => {
+              console.error(`Field: ${err.field}, Message: ${err.message}`);
+            });
+          } else {
+            console.error('Error creating post:', error); // Log other errors
+          }
+        });
       }, error => {
-        console.error('Error creating post:', error); // Log for debugging
+        console.error('Error loading users:', error); // Log for debugging
       });
     }
   }
