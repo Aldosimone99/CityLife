@@ -1,28 +1,22 @@
-:host, body, html {
+:host, html, body {
   display: block;
   font-family: Arial, sans-serif;
   background-color: #18191a;
   color: #e4e6eb;
-  min-height: 100vh; // Changed from height: 100% to min-height: 100vh
+  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; // Changed from 1 to hidden
-  background-image: url('../../assets/imgs/city.jpg'); // Add your image path here
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; // Ensure the image does not repeat
+  min-height: 100vh;
+  overflow: hidden; /* Prevent overflow that might cause white space */
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 80%;
   margin: 20px auto;
-  background: rgba(24, 25, 26, 0.8); // Semi-transparent background
-  border-radius: 10px; // Optional: add rounded corners
-  padding: 20px; // Optional: add padding for better spacing
 }
 
 h2 {
@@ -34,7 +28,7 @@ h2 {
   justify-content: center;
   margin-bottom: 20px;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
 
   input {
     flex: 1;
@@ -73,46 +67,8 @@ h2 {
   }
 }
 
-.add-post {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto 20px auto; /* Center the input bar */
-
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #3a3b3c;
-    color: white;
-    resize: none;
-    font-size: 16px;
-  }
-
-  button {
-    align-self: flex-end;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 14px;
-
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-}
-
 .post-container {
-  width: 100%;
-  max-width: 500px;
+  width: 500px;
   background-color: #242526;
   border-radius: 10px;
   padding: 15px;
@@ -120,9 +76,6 @@ h2 {
   color: white;
   font-family: Arial, sans-serif;
   text-align: left;
-  min-height: 100px; // Ensure background expands
-  overflow: hidden; // Added to fix overflow issue
-  flex-grow: 1; // Added to ensure the container grows
 }
 
 .post-header {
@@ -178,113 +131,6 @@ h2 {
     &:last-child {
       color: #B0B3B8;
     }
-
-    &.delete-button {
-      color: #B0B3B8; // Match the color of the comments button
-    }
-  }
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  padding-top: 60px;
-}
-
-.modal.show {
-  display: block;
-}
-
-.delete-confirmation-modal .modal-content {
-  background-color: #343a40a0;
-  margin: 20% auto;
-  padding: 20px;
-  border: 1px solid #817b7b;
-  width: 380px;
-  height: 230px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 75px;
-}
-
-.delete-confirmation-modal p {
-  margin-bottom: 15px;
-  margin-top: -10px;
-}
-
-.delete-confirmation-modal .btn-danger,
-.delete-confirmation-modal .btn-secondary {
-  width: 346px;
-  height: 48px;
-  padding: 8px 16px;
-  margin: 4px 0;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.delete-confirmation-modal h3 {
-  font-size: 20px;
-  margin: 0;
-  position: absolute;
-  top: 25px;
-  left: 20px;
-}
-
-.delete-confirmation-modal .close {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
-  position: absolute;
-  top: 13px;
-  right: 20px;
-}
-
-.delete-confirmation-modal .close:hover,
-.delete-confirmation-modal .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.pagination-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-
-  button {
-    background-color: #343a40;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:disabled {
-      background-color: #555;
-      cursor: not-allowed;
-    }
-  }
-
-  span {
-    color: white;
-    font-size: 16px;
   }
 }
 
@@ -292,7 +138,6 @@ h2 {
   margin-top: 10px;
 
   .comment-box {
-    position: relative; /* Ensure the button is positioned correctly */
     background-color: #3a3b3c;
     padding: 10px;
     border-radius: 8px;
@@ -308,111 +153,37 @@ h2 {
     strong {
       font-weight: bold;
     }
-
-    button {
-      position: absolute; /* Ensure the button is positioned correctly */
-      top: 6px;
-      right: 10px;
-      background: none;
-      border: none;
-      color: inherit;
-      cursor: pointer;
-      font-size: 1.2rem;
-
-      &:hover {
-        color: red;
-      }
-
-      i {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  .add-comment {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-
-    input {
-      flex: 1;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      background-color: #3a3b3c;
-      color: white;
-    }
-
-    button {
-      padding: 10px 20px;
-      border-radius: 5px;
-      border: none;
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
   }
 }
 
-.delete-comment-confirmation-modal .modal-content {
-  background-color: #343a40a0;
-  margin: 20% auto;
-  padding: 20px;
-  border: 1px solid #817b7b;
-  width: 380px;
-  height: 250px;
-  box-sizing: border-box;
+.pagination {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 75px;
-}
+  margin-top: 20px;
 
-.delete-comment-confirmation-modal p {
-  margin-bottom: 15px;
-  margin-top: -10px;
-}
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
-.delete-comment-confirmation-modal .btn-danger,
-.delete-comment-confirmation-modal .btn-secondary {
-  width: 346px;
-  height: 48px;
-  padding: 8px 16px;
-  margin: 4px 0;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-}
+    &:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
 
-.delete-comment-confirmation-modal h3 {
-  font-size: 20px;
-  margin: 0;
-  position: absolute;
-  top: 25px;
-  left: 20px;
-}
+    &:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+  }
 
-.delete-comment-confirmation-modal .close {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
-  position: absolute;
-  top: 13px;
-  right: 20px;
-}
-
-.delete-comment-confirmation-modal .close:hover,
-.delete-comment-confirmation-modal .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  span {
+    font-size: 16px;
+    color: #e4e6eb;
+  }
 }

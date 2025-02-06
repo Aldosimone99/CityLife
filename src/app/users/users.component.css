@@ -1,16 +1,13 @@
-:host {
+:host, html, body {
   display: block;
   font-family: Arial, sans-serif;
   background-color: #18191a;
   color: white;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  background-image: url("../../assets/imgs/city.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .modal {
@@ -153,14 +150,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 80%;
   justify-content: flex-start;
   align-items: center;
-  background: rgba(24, 25, 26, 0.8);
+  background-color: #18191a;
   color: white;
   padding-top: 50px;
-  margin-top: 50px;
-  border-radius: 10px;
 }
 
 h1 {
@@ -171,7 +165,7 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 150px;
   width: 50%;
   max-width: 600px;
 }

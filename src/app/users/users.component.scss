@@ -1,16 +1,13 @@
-:host {
+:host, html, body {
   display: block;
   font-family: Arial, sans-serif;
   background-color: #18191a;
   color: white;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  background-image: url('../../assets/imgs/city.jpg'); // Add your image path here
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; // Ensure the image does not repeat
+  min-height: 100vh;
 }
 
 .modal {
@@ -154,15 +151,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 80%;
   justify-content: flex-start;
   align-items: center;
-  background: rgba(24, 25, 26, 0.8); // Semi-transparent background
+  background-color: #18191a;
   color: white;
   padding-top: 50px;
-  margin-top: 50px;
-  border-radius: 10px; // Optional: add rounded corners
-
 }
 
 h1 {
@@ -173,7 +166,7 @@ h1 {
   display: flex;
   justify-content: center; // Center the search bar
   margin-top: 20px;
-  margin-bottom: 80px;
+  margin-bottom: 150px;
   width: 50%; // Ensure the search bar takes up 50% of its container
   max-width: 600px; // Set a maximum width to ensure it doesn't get too wide
 
@@ -376,3 +369,4 @@ h1 {
   margin-bottom: 0; /* Rimuovi completamente lo spazio sotto il messaggio di errore */
   line-height: 0.2; /* Riduci l'altezza della linea */
 }
+
