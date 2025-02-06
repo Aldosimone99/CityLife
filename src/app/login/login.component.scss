@@ -171,3 +171,83 @@ button {
   color: red;
   margin-bottom: 5px;
 }
+
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+    background-image: url('/path/to/mobile-background.jpg'); /* Add background image */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .form-section {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .form-box {
+    padding: 15px;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .signin-btn {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .language-switcher {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .overlay-text {
+    top: 20px;
+    left: 10px;
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    background-image: url('../../assets/imgs/loginwallpaper.gif'); /* Add background image */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .form-section {
+    padding: 10px;
+    background-color: #ffffff00;
+  }
+
+  .form-box {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  .signin-btn {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .overlay-text {
+    top: 10px;
+    left: 5px;
+
+    h2 {
+      font-size: 25px;
+    }
+  }
+}
