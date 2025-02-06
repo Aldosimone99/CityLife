@@ -183,7 +183,7 @@ button {
   .form-section {
     padding: 20px;
     max-width: 100%;
-    background-color: #ffffff00
+    background-color: #ffffff00;
   }
 
   .image-section {
@@ -196,6 +196,10 @@ button {
 
   .logo {
     width: 200px;
+    backdrop-filter: blur(10px); /* Add blur background */
+    background-color: rgba(255, 255, 255, 0.198); /* Optional: add semi-transparent background */
+    padding: 10px; /* Optional: add padding */
+    border-radius: 10px; /* Optional: add border radius */
   }
 
   .signin-btn {
@@ -204,7 +208,7 @@ button {
   }
 
   .language-switcher {
-    flex-direction: column;
+    flex-direction: row; /* Change to row to place buttons side by side */
     gap: 5px;
   }
 
@@ -236,11 +240,20 @@ button {
 
   .logo {
     width: 180px;
+    backdrop-filter: blur(10px); /* Add blur background */
+    background-color: rgba(255, 255, 255, 0.3); /* Optional: add semi-transparent background */
+    padding: 10px; /* Optional: add padding */
+    border-radius: 10px; /* Optional: add border radius */
   }
 
   .signin-btn {
     font-size: 0.8rem;
     padding: 6px;
+  }
+
+  .language-switcher {
+    flex-direction: row; /* Change to row to place buttons side by side */
+    gap: 5px;
   }
 
   .overlay-text {

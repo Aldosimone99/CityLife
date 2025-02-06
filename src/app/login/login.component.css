@@ -175,13 +175,18 @@ footer a {
   }
   .logo {
     width: 200px;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px); /* Add blur background */
+    background-color: rgba(255, 255, 255, 0.198); /* Optional: add semi-transparent background */
+    padding: 10px; /* Optional: add padding */
+    border-radius: 10px; /* Optional: add border radius */
   }
   .signin-btn {
     font-size: 0.9rem;
     padding: 8px;
   }
   .language-switcher {
-    flex-direction: column;
+    flex-direction: row; /* Change to row to place buttons side by side */
     gap: 5px;
   }
   .overlay-text {
@@ -207,10 +212,19 @@ footer a {
   }
   .logo {
     width: 180px;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px); /* Add blur background */
+    background-color: rgba(255, 255, 255, 0.3); /* Optional: add semi-transparent background */
+    padding: 10px; /* Optional: add padding */
+    border-radius: 10px; /* Optional: add border radius */
   }
   .signin-btn {
     font-size: 0.8rem;
     padding: 6px;
+  }
+  .language-switcher {
+    flex-direction: row; /* Change to row to place buttons side by side */
+    gap: 5px;
   }
   .overlay-text {
     top: 10px;
