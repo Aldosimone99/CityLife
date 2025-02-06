@@ -379,8 +379,8 @@ h1 {
 
 @media (max-width: 768px) {
   :host {
-    height: auto;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     padding: 10px;
     background-image: none; // Hide background image on mobile
   }
@@ -403,14 +403,50 @@ h1 {
   }
 
   .user-list {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
+    padding: 0 10px; // Add padding to the user list
   }
 
   .user-box {
-    width: 48%;
-    height: auto;
+    display: flex;
+    align-items: center;
+    background-color: #444;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    &:hover {
+      background-color: #555;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .user-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .user-status {
+      font-size: 14px;
+      color: #ccc;
+    }
   }
 
   .modal-content {
@@ -436,8 +472,8 @@ h1 {
 
 @media (max-width: 480px) {
   :host {
-    height: auto;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     padding: 10px;
     background-image: none; // Hide background image on mobile
     margin-bottom: 70px;
@@ -460,14 +496,61 @@ h1 {
   }
 
   .user-list {
+    display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 0 10px; // Add padding to the user list
   }
 
   .user-box {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: flex-start;
+    background-color: #444;
+    color: white;
     width: 100%;
-    height: auto;
+    height: 80px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    &:hover {
+      background-color: #555;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      position: absolute;
+      top: 14px; /* Sposta in basso */
+      left: 20px; /* Sposta a destra */
+    }
+
+    .user-name {
+      font-size: 20px;
+      font-weight: bold;
+      position: absolute;
+      top: 25px; /* Sposta in basso */
+      left: 80px; /* Sposta a destra */
+    }
+
+    .user-status {
+      font-size: 14px;
+      color: #ccc;
+      position: absolute;
+      top: 40px; /* Sposta in basso */
+      left: 333px; /* Sposta a destra */
+    }
+
+    .delete-btn {
+      font-size: 1.5rem;
+      position: absolute;
+      top: 40px; /* Sposta in basso */
+      left: 333px; /* Sposta a destra */
+    }
   }
+
 
   .modal-content {
     width: 90%;
