@@ -186,12 +186,20 @@ button {
     background-color: #ffffff00;
   }
 
-  .image-section {
-    display: none;
-  }
-
   .form-box {
     padding: 15px;
+    background-color: #303030; // Change background color
+    color: white; // Change text color
+  }
+
+  .form-box input {
+    background-color: #444; // Similar background color to the form box
+    color: white; // Change text color
+    border: 1px solid #555; // Adjust border color
+
+    &::placeholder {
+      color: white; // Change placeholder text color
+    }
   }
 
   .logo {
@@ -234,8 +242,24 @@ button {
     background-color: #ffffff00;
   }
 
+  .image-section {
+    display: none;
+  }
+
   .form-box {
     padding: 10px;
+    background-color: #303030; // Change background color
+    color: white; // Change text color
+  }
+
+  .form-box input {
+    background-color: #444; // Similar background color to the form box
+    color: white; // Change text color
+    border: 1px solid #555; // Adjust border color
+
+    &::placeholder {
+      color: white; // Change placeholder text color
+    }
   }
 
   .logo {

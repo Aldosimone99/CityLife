@@ -167,11 +167,21 @@ footer a {
     max-width: 100%;
     background-color: rgba(255, 255, 255, 0);
   }
-  .image-section {
-    display: none;
-  }
   .form-box {
     padding: 15px;
+    background-color: #303030;
+    color: white;
+  }
+  .form-box input {
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+  }
+  .form-box input::-moz-placeholder {
+    color: white;
+  }
+  .form-box input::placeholder {
+    color: white;
   }
   .logo {
     width: 200px;
@@ -207,8 +217,24 @@ footer a {
     padding: 10px;
     background-color: rgba(255, 255, 255, 0);
   }
+  .image-section {
+    display: none;
+  }
   .form-box {
     padding: 10px;
+    background-color: #303030;
+    color: white;
+  }
+  .form-box input {
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+  }
+  .form-box input::-moz-placeholder {
+    color: white;
+  }
+  .form-box input::placeholder {
+    color: white;
   }
   .logo {
     width: 180px;
