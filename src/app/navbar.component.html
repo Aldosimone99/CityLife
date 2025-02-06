@@ -1,4 +1,4 @@
-<header class="p-3 bg-dark text-white w-100">
+<header class="p-3 bg-dark text-white w-100 d-none d-lg-block">
   <div class="container-fluid">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a routerLink="/users" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -21,3 +21,19 @@
     </div>
   </div>
 </header>
+
+<!-- Bottom Navigation Bar for Mobile -->
+<nav class="bottom-nav d-lg-none">
+  <a routerLink="/users" class="nav-link">
+    <i class="bi bi-people-fill" style="font-size: 24px;" aria-label="Users"></i>
+    <span>Home</span>
+  </a>
+  <a routerLink="/posts" class="nav-link">
+    <i class="bi bi-pencil-square" style="font-size: 24px;" aria-label="Posts"></i>
+    <span>Posts</span>
+  </a>
+  <a class="nav-link" (click)="logout()">
+    <i class="bi bi-door-closed" style="font-size: 24px;" aria-label="Logout"></i>
+    <span>Logout</span>
+  </a>
+</nav>
