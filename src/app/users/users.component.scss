@@ -20,6 +20,8 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  // Ensure the background color covers the status bar area
+  background: #18191a;
 }
 
 .modal {
@@ -386,7 +388,14 @@ h1 {
   line-height: 0.2; /* Riduci l'altezza della linea */
 }
 
-@media (max-width: 390px) {
+
+
+
+
+
+
+
+@media (max-width: 400px) {
   :host {
     height: 100vh;
     width: 100vw;
@@ -461,8 +470,8 @@ h1 {
     .delete-btn {
       font-size: 20px;
       position: absolute;
-      bottom: 10px; /* Position at the bottom */
-      right: 10px; /* Position at the right */
+      bottom: 5px; /* Position at the bottom */
+      right: 5px; /* Position at the right */
     }
   }
 
@@ -491,6 +500,11 @@ h1 {
     margin-left: 10px; // Adjust the margin as needed
   }
 }
+
+
+
+
+
 
 @media (max-width: 480px) {
   :host {
@@ -574,8 +588,8 @@ h1 {
     .delete-btn {
       font-size: 20px;
       position: absolute;
-      bottom: 10px; /* Position at the bottom */
-      right: 10px; /* Position at the right */
+      bottom: 5px; /* Position at the bottom */
+      right: 5px; /* Position at the right */
     }
   }
 
