@@ -1,16 +1,16 @@
 # Citylife
-### Sito Online
+## Sito Online
 [https://citylife1.netlify.app/](https://citylife1.netlify.app/)
 ## Panoramica
 
 L'applicazione si concentra sullo sviluppo urbano e si integra con la piattaforma GoRest per fornire funzionalità di gestione degli utenti, post e commenti. 
 Le principali funzionalità includono:
 
-## Pagina di Login
+# Pagina di Login
 
 L'applicazione offre la possibilità agli utenti di autenticarsi o registrarsi tramite la piattaforma GoRest. Ecco alcuni dettagli specifici riguardo a questa funzionalità:
 
-### Form di Login
+## Form di Login
 
 Il form di login richiede l'autenticazione attraverso la piattaforma GoRest. 
 Per completare con successo il processo di login, è necessario fornire il token, che può essere ottenuto tramite l'autenticazione su [https://gorest.co.in/consumer/login](https://gorest.co.in/consumer/login).
@@ -21,7 +21,7 @@ Nella pagina di login, sotto il form, è possibile scegliere la lingua (Italiana
 E' possibile modificarla anche dopo il login con il toggle nella navbar.
 
 
-#### Pagina Utenti
+# Pagina Utenti
 
 La pagina degli utenti offre una visione completa di tutti gli utenti disponibili, ed è possibile:
 - Effettuare ricerche per nome o email tramite la barra di ricerca.
@@ -31,7 +31,7 @@ La pagina degli utenti offre una visione completa di tutti gli utenti disponibil
   - Rosso se lo stato è `inactive`.
 - Decidere il numero di utenti da visualizzare tramite un toggle vicino il bottone per aggiungere un nuovo utente.
 
-### Utilizzo del Form di Creazione Utente
+## Utilizzo del Form di Creazione Utente
 
 Il form di creazione utente si trova premendo il bottone 'add user' o 'aggiungi un utente' nella pagina Users e richiede i seguenti input:
 
@@ -46,7 +46,7 @@ Il form contiene due bottoni:
 - **Aggiungi Utente/ Add User**: Controlla se un utente con la stessa email esiste già. Se non esiste, crea un nuovo utente e lo aggiunge alla lista. Se esiste, mostra un messaggio di errore e non crea l'utente.
 
 
-### Eliminare un utente
+## Eliminare un utente
 
 Per eliminare un utente:
 
@@ -56,8 +56,7 @@ Per eliminare un utente:
 4. Seleziona "Cancella" o "Delete" per confermare l'eliminazione dell'utente. L'utente sarà rimosso dalla lista.
 
 
-
-#### Visualizzazione Profilo Utente
+## Visualizzazione Profilo Utente
 
 Ogni utente ha un proprio profilo dove è possibile visualizzare:
 
@@ -92,7 +91,7 @@ In ogni pagina utente è disponibile un box dove poter inserire il testo del pos
 
 
 
-#### Posts
+# Posts
 La pagina dei post consente di visualizzare, filtrare e gestire i post. Di seguito sono descritte le principali caratteristiche e funzionalità della pagina:
 - **Creare Post**: È possibile creare nuovi post tramite un input e un bottone per pubblicarlo, come nelle pagine profilo degli utenti.
 - **Eliminare Post**: È possibile eliminare i post dei vari utenti tramite il bottone 'delete' o 'elimina'; qui comparirà poi un popup di conferma.
@@ -103,7 +102,7 @@ La pagina dei post consente di visualizzare, filtrare e gestire i post. Di segui
 
 
 
-## Logout 
+# Logout 
 Il bottone di Logout è presente nella statusbar e permette di effettuare il logout e reinderizzerà automaticamente nella pagina di login.
 ##
 ##
