@@ -56,7 +56,7 @@ Per eliminare un utente:
 4. Seleziona "Cancella" o "Delete" per confermare l'eliminazione dell'utente. L'utente sarà rimosso dalla lista.
 
 
-## Visualizzazione Profilo Utente
+# Profilo Utente
 
 Ogni utente ha un proprio profilo dove è possibile visualizzare:
 
