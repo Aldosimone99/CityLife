@@ -21,6 +21,7 @@
     "@angular/platform-server": "^19.1.0",
     "@angular/router": "^19.1.0",
     "@angular/ssr": "^19.1.2",
+    "@netlify/angular-runtime": "^2.2.2",
     "@ngrx/effects": "^19.0.0",
     "@ngrx/entity": "^19.0.0",
     "@ngrx/router-store": "^19.0.0",
