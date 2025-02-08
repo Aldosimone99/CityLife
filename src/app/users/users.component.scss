@@ -13,6 +13,15 @@
   background-repeat: no-repeat; // Ensure the image does not repeat
 }
 
+// Add these styles to ensure the background color covers the entire viewport
+html, body {
+  background-color: #18191a;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -377,17 +386,6 @@ h1 {
   line-height: 0.2; /* Riduci l'altezza della linea */
 }
 
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 390px) {
   :host {
     height: 100vh;
@@ -463,8 +461,8 @@ h1 {
     .delete-btn {
       font-size: 20px;
       position: absolute;
-      top: 45px; /* Sposta in basso */
-      left: 35px; /* Sposta a destra */
+      bottom: 10px; /* Position at the bottom */
+      right: 10px; /* Position at the right */
     }
   }
 
@@ -493,20 +491,6 @@ h1 {
     margin-left: 10px; // Adjust the margin as needed
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 480px) {
   :host {
@@ -590,11 +574,10 @@ h1 {
     .delete-btn {
       font-size: 20px;
       position: absolute;
-      top: 45px; /* Sposta in basso */
-      left: 335px; /* Sposta a destra */
+      bottom: 10px; /* Position at the bottom */
+      right: 10px; /* Position at the right */
     }
   }
-
 
   .modal-content {
     width: 90%;

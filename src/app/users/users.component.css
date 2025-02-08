@@ -13,6 +13,14 @@
   background-repeat: no-repeat;
 }
 
+html, body {
+  background-color: #18191a;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -434,8 +442,8 @@ h1 {
   .user-box .delete-btn {
     font-size: 20px;
     position: absolute;
-    top: 45px; /* Sposta in basso */
-    left: 35px; /* Sposta a destra */
+    bottom: 10px; /* Position at the bottom */
+    right: 10px; /* Position at the right */
   }
   .modal-content {
     width: 90%;
@@ -531,8 +539,8 @@ h1 {
   .user-box .delete-btn {
     font-size: 20px;
     position: absolute;
-    top: 45px; /* Sposta in basso */
-    left: 335px; /* Sposta a destra */
+    bottom: 10px; /* Position at the bottom */
+    right: 10px; /* Position at the right */
   }
   .modal-content {
     width: 90%;
