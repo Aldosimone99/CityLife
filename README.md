@@ -1,7 +1,7 @@
 # Citylife
 ## Sito Online
 [https://citylife1.netlify.app/](https://citylife1.netlify.app/)
-## Panoramica
+# Panoramica
 
 L'applicazione si concentra sullo sviluppo urbano e si integra con la piattaforma GoRest per fornire funzionalità di gestione degli utenti, post e commenti. 
 Le principali funzionalità includono:
