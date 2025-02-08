@@ -443,8 +443,8 @@ h1 {
   .user-box .delete-btn {
     font-size: 20px;
     position: absolute;
-    bottom: 5px; /* Position at the bottom */
-    right: 5px; /* Position at the right */
+    bottom: 4px; /* Position at the bottom */
+    right: -13px; /* Position at the right */
   }
   .modal-content {
     width: 90%;
@@ -540,8 +540,8 @@ h1 {
   .user-box .delete-btn {
     font-size: 20px;
     position: absolute;
-    bottom: 5px; /* Position at the bottom */
-    right: 5px; /* Position at the right */
+    bottom: 4px; /* Position at the bottom */
+    right: -13px; /* Position at the right */
   }
   .modal-content {
     width: 90%;
