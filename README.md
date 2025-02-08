@@ -4,6 +4,7 @@
 # Panoramica
 
 L'applicazione si concentra sullo sviluppo urbano e si integra con la piattaforma GoRest per fornire funzionalità di gestione degli utenti, post e commenti. 
+Il sito è ottimizzato sia per Desktop sia per mobile.
 Le principali funzionalità includono:
 
 # Pagina di Login
