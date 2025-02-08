@@ -475,6 +475,7 @@ h1 {
     padding: 10px;
     background-image: none;
     margin-bottom: 80px;
+    min-height: 100vh;
   }
   .container {
     margin: 25px 0;
