@@ -26,6 +26,12 @@ export class UserService {
     );
   }
 
+  getUserById(userId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/users/${userId}`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   getUserPosts(userId: number): Observable<any[]> {
     if (isNaN(userId) || userId <= 0) {
       return throwError('Invalid user ID');

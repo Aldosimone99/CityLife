@@ -42,6 +42,23 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  loadAllPosts(): void {
+    this.userService.getUsers().subscribe(users => {
+      const userMap = new Map(users.map(user => [user.id, user.name]));
+      this.postService.getPosts().subscribe((posts: any[]) => {
+        this.posts = posts.filter(post => userMap.has(post.user_id)); // Filter posts by existing users
+        this.posts.forEach(post => {
+          post.userName = userMap.get(post.user_id); // Add the user's name to the post
+        });
+        this.updateFilteredPosts(); // Update the displayed posts based on the selected number
+      }, error => {
+        console.error('Error loading posts:', error); // Log for debugging
+      });
+    }, error => {
+      console.error('Error loading users:', error); // Log for debugging
+    });
+  }
+
   searchPosts() {
     const filtered = this.posts.filter(post =>
       post.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
@@ -76,26 +93,6 @@ export class PostsComponent implements OnInit {
     }
   }
 
-  loadAllPosts(): void {
-    this.userService.getUsers().subscribe(users => {
-      const availableUserIds = new Set(users.map((user: any) => user.id));
-      this.postService.getPosts().subscribe(posts => {
-        this.posts = posts.filter((post: any) => availableUserIds.has(post.user_id));
-        this.posts.forEach(post => {
-          const user = users.find((user: any) => user.id === post.user_id);
-          if (user) {
-            post.userName = user.name;
-          }
-        });
-        this.totalPages = Math.ceil(this.posts.length / this.postsPerPage);
-        this.updateFilteredPosts();
-      }, error => {
-        console.error('Error loading posts:', error); // Log for debugging
-      });
-    }, error => {
-      console.error('Error loading users:', error); // Log for debugging
-    });
-  }
 
   updateFilteredPosts(): void {
     const startIndex = (this.currentPage - 1) * this.postsPerPage;
@@ -193,9 +190,14 @@ export class PostsComponent implements OnInit {
         };
 
         this.postService.addPost(post).subscribe((newPost: any) => {
-          this.posts.unshift(newPost); // Add the new post to the beginning of the posts array
-          this.newPost = ''; // Clear the input field
-          this.updateFilteredPosts(); // Update the displayed posts
+          this.userService.getUserById(userId).subscribe(user => {
+            newPost.userName = user.name; // Add the user's name to the new post
+            this.posts.unshift(newPost); // Add the new post to the beginning of the posts array
+            this.newPost = ''; // Clear the input field
+            this.updateFilteredPosts(); // Update the displayed posts
+          }, error => {
+            console.error('Error loading user:', error); // Log for debugging
+          });
         }, (error: any) => {
           if (error.status === 422) {
             console.error('Validation error:', error.error); // Log validation errors

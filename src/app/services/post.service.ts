@@ -19,8 +19,8 @@ export class PostService {
     }
   }
 
-  getPosts(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/posts`, {
+  getPosts(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/posts`, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })
