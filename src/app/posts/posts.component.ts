@@ -46,9 +46,9 @@ export class PostsComponent implements OnInit {
     this.userService.getUsers().subscribe(users => {
       const userMap = new Map(users.map(user => [user.id, user.name]));
       this.postService.getPosts().subscribe((posts: any[]) => {
-        this.posts = posts.filter(post => userMap.has(post.user_id)); // Filter posts by existing users
-        this.posts.forEach(post => {
-          post.userName = userMap.get(post.user_id); // Add the user's name to the post
+        this.posts = posts.map(post => {
+          post.userName = userMap.get(post.user_id) || 'User'; // Add the user's name or 'User' if not found
+          return post;
         });
         this.updateFilteredPosts(); // Update the displayed posts based on the selected number
       }, error => {
